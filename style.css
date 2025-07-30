@@ -43,37 +43,39 @@ body {
 /* Assuming Manrope-Regular, Manrope-Medium, Manrope-SemiBold, Manrope-Bold are available */
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-Regular.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-Regular.woff') format('woff');
+    src: url('Manrope-Regular.woff2') format('woff2'),
+         url('Manrope-Regular.woff') format('woff'),
+         url('Manrope-Regular.ttf') format('truetype'); /* Assuming you converted TTF to WOFF/WOFF2 */
     font-weight: 400; /* Regular */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-Medium.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-Medium.woff') format('woff');
+    src: url('Manrope-Medium.woff2') format('woff2'),
+         url('Manrope-Medium.woff') format('woff'),
+         url('Manrope-Medium.ttf') format('truetype');
     font-weight: 500; /* Medium */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-SemiBold.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-SemiBold.woff') format('woff');
+    src: url('Manrope-SemiBold.woff2') format('woff2'),
+         url('Manrope-SemiBold.woff') format('woff'),
+         url('Manrope-SemiBold.ttf') format('truetype');
     font-weight: 600; /* SemiBold */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-Bold.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-Bold.woff') format('woff');
+    src: url('Manrope-Bold.woff2') format('woff2'),
+         url('Manrope-Bold.woff') format('woff'),
+         url('Manrope-Bold.ttf') format('truetype');
     font-weight: 700; /* Bold */
     font-style: normal;
 }
-
-
 /* Navbar Styling */
 .navbar {
     position: fixed; /* Keep navbar at the top */
@@ -197,36 +199,39 @@ body {
 /* Assuming Manrope-Regular, Manrope-Medium, Manrope-SemiBold, Manrope-Bold are available */
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-Regular.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-Regular.woff') format('woff');
+    src: url('Manrope-Regular.woff2') format('woff2'),
+         url('Manrope-Regular.woff') format('woff'),
+         url('Manrope-Regular.ttf') format('truetype'); /* Assuming you converted TTF to WOFF/WOFF2 */
     font-weight: 400; /* Regular */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-Medium.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-Medium.woff') format('woff');
+    src: url('Manrope-Medium.woff2') format('woff2'),
+         url('Manrope-Medium.woff') format('woff'),
+         url('Manrope-Medium.ttf') format('truetype');
     font-weight: 500; /* Medium */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-SemiBold.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-SemiBold.woff') format('woff');
+    src: url('Manrope-SemiBold.woff2') format('woff2'),
+         url('Manrope-SemiBold.woff') format('woff'),
+         url('Manrope-SemiBold.ttf') format('truetype');
     font-weight: 600; /* SemiBold */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-Bold.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-Bold.woff') format('woff');
+    src: url('Manrope-Bold.woff2') format('woff2'),
+         url('Manrope-Bold.woff') format('woff'),
+         url('Manrope-Bold.ttf') format('truetype');
     font-weight: 700; /* Bold */
     font-style: normal;
 }
-
 
 /* 3. Hero Section Styling */
 .hero-section {
@@ -247,7 +252,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('assets/images/bg.png') no-repeat center center/cover; /* Use your bg.png */
+    background: url('bg.png') no-repeat center center/cover; /* Use your bg.png */
     background-attachment: fixed; /* Add this line */
     opacity: 0.8; /* Adjust opacity if the background seems too strong */
     z-index: 1; /* Behind the content */
@@ -749,7 +754,7 @@ body {
 @media (max-width: 768px) {
     /* Mobile Background Image */
     .hero-background {
-        background: url('assets/images/bg mobile.png') no-repeat center center/cover;
+        background: url('bg mobile.png') no-repeat center center/cover;
         background-attachment: scroll; /* Change to scroll for mobile */
     }
 
