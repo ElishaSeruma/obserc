@@ -1,0 +1,983 @@
+/* style.css */
+
+/* 1. Global Resets and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Define your primary colors based on the UI */
+    --primary-green: #07D6A09A; /* Adjust if hex is slightly off based on exact sample */
+    --primary-dark: #1A1A1A; /* Or whatever the darkest text color is */
+    --text-light: #F8F8F8; /* For light text on dark backgrounds */
+    --text-dark: #333; /* For dark text on light backgrounds */
+    --gradient-start: #DBFCF5; /* Light greenish-blue */
+    --gradient-end: #C7FCEF; /* Slightly darker greenish-blue */
+    --button-gradient-start: #07D6A0;
+    --button-gradient-end: #07D6A0;
+    --form-bg: #E0FCF6;
+    --card-bg: #F8F8F8; /* Light background for the beta card */
+    --border-color: #E0E0E0; /* For general borders */
+}
+
+body {
+    font-family: 'Manrope', sans-serif; /* We'll import this next */
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #ffffff; /* Base background */
+    overflow-x: hidden; /* Prevent horizontal scroll from elements like the card */
+}
+
+/* Container for consistent content width */
+.container {
+    max-width: 1200px; /* Adjust based on your visual estimation */
+    margin: 0 auto;
+    padding: 0 20px; /* Some padding on the sides */
+    position: relative; /* For absolute positioning of elements inside */
+    z-index: 2; /* Ensure content is above background */
+}
+
+/* 2. Font Imports (Manrope) */
+/* Assuming Manrope-Regular, Manrope-Medium, Manrope-SemiBold, Manrope-Bold are available */
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-Regular.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Regular.woff') format('woff');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-Medium.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Medium.woff') format('woff');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-SemiBold.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-SemiBold.woff') format('woff');
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-Bold.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Bold.woff') format('woff');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+}
+
+
+/* Navbar Styling */
+.navbar {
+    position: fixed; /* Keep navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0; /* Default padding for non-scrolled state */
+
+    /* Apply closed-beta-card background and blur to the base navbar */
+    background-color: rgba(255, 255, 255, 0.4); /* White with 40% opacity from card */
+    backdrop-filter: blur(10px); /* Apply a blur effect to the background behind the navbar */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease, padding 0.3s ease, border 0.3s ease;
+    z-index: 100; /* Ensure it's above other content */
+    border-radius: 16px; /* Initial border-radius */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Initial border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Initial box-shadow */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between; /* Distribute items */
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.0em;
+    margin-left: 30px; /* Adjust this value as needed to extend left */
+}
+
+.navbar-brand img {
+    height: 30px; /* Adjust logo size */
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    flex-grow: 1; /* Allow navigation links to take available space */
+    justify-content: center; /* Center the navigation links */
+}
+
+/* Nav Link base style - ensure it has padding and position: relative */
+.nav-link {
+    color: var(--text-dark); /* Default text color is black/dark */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+/* Active Nav Link Indicator (green bar is constant here) */
+.nav-link.active {
+    color: var(--text-dark); /* Active link text color remains dark/black */
+    font-weight: 600; /* Slightly bolder for active */
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Position the bar below the text */
+    width: 100%;
+    height: 2px; /* Thickness of the green bar */
+    background-color: #07D6A0; /* Green color for the bar */
+    border-radius: 2px;
+    transform: scaleX(1); /* Ensure it's fully visible and constant */
+    transform-origin: left center;
+}
+
+/* Hover Effect for ALL Nav Links (text color only) */
+.nav-link:hover { /* This rule now applies to all links on hover */
+    color: #07D6A0; /* Change text color to green on hover */
+}
+/* Navbar Button (Get Early Access) */
+.btn-primary-nav {
+    background: linear-gradient(to right, #07D6A0, #07D6A0); /* Solid green background */
+    color: white;
+    padding: 10px 20px; /* Slightly smaller padding for navbar button */
+    border: none;
+    border-radius: 100px; /* Pill shape */
+    font-size: 0.9em;
+    font-weight: 300; /* SemiBold */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+    margin-right: 30px; /* Adjust this value as needed to extend right */
+}
+
+.btn-primary-nav:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Navbar Scrolled State - Only applies radius, border, and specific box-shadow */
+.navbar.scrolled {
+    padding: 10px 0; /* Slightly reduce padding on scroll */
+    border-radius: 16px; /* Full border-radius when scrolled */
+    border: 1px solid #BFBFBF; /* Add border when scrolled */
+    box-shadow: 0 3px 13px 34px rgba(0, 0, 0, 0.16); /* New box shadow: 0 3px 13px 34px black with 16% opacity */
+    /* Background-color and backdrop-filter are already applied by the base .navbar */
+}
+/* Container for consistent content width */
+.container {
+    max-width: 1200px; /* Adjust based on your visual estimation */
+    margin: 0 auto;
+    padding: 0 20px; /* Some padding on the sides */
+    position: relative; /* For absolute positioning of elements inside */
+    z-index: 2; /* Ensure content is above background */
+}
+
+/* 2. Font Imports (Manrope) */
+/* Assuming Manrope-Regular, Manrope-Medium, Manrope-SemiBold, Manrope-Bold are available */
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-Regular.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Regular.woff') format('woff');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-Medium.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Medium.woff') format('woff');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-SemiBold.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-SemiBold.woff') format('woff');
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-Bold.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Bold.woff') format('woff');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+}
+
+
+/* 3. Hero Section Styling */
+.hero-section {
+    position: relative; /* For positioning the background and card */
+    padding: 80px 0 100px; /* Top/bottom padding */
+    text-align: center;
+    overflow: hidden; /* Important to contain background and potential overflows */
+    min-height: 700px; /* Adjust minimum height to ensure everything fits */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/images/bg.png') no-repeat center center/cover; /* Use your bg.png */
+    background-attachment: fixed; /* Add this line */
+    opacity: 0.8; /* Adjust opacity if the background seems too strong */
+    z-index: 1; /* Behind the content */
+}
+
+.hero-section .container {
+    position: relative; /* Ensure content is on top of the background */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Spacing between elements */
+}
+
+.hero-section .logo {
+    width: 60px; /* Adjust size of the logo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    font-size: 3.2em; /* Large, bold headline */
+    color: var(--primary-dark);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 600; /* Bold */
+    max-width: 800px; /* Control width of the headline */
+}
+
+.hero-section .sub-headline {
+    font-size: 1.2em;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    max-width: 600px;
+    line-height: 1.5;
+    font-weight: 400; /* Regular */
+}
+
+/* Waitlist Form Styling */
+.waitlist-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--form-bg); /* Light green background for the form */
+    border-radius: 100px; /* Pill shape */
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    width: fit-content; /* Shrink to content */
+}
+
+.waitlist-form .input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 15px;
+}
+
+.waitlist-form .mail-icon {
+    width: 24px; /* Size of the mail icon */
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(35%) sepia(87%) saturate(1450%) hue-rotate(152deg) brightness(97%) contrast(101%); /* Adjust filter to match icon color if needed, or replace with SVG */
+}
+
+.waitlist-form input[type="email"] {
+    border: none;
+    background: transparent;
+    padding: 10px 0;
+    font-size: 1em;
+    color: var(--primary-dark);
+    min-width: 250px; /* Adjust input width */
+    outline: none; /* Remove outline on focus */
+}
+
+.waitlist-form input[type="email"]::placeholder {
+    color: #999;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--button-gradient-start), var(--button-gradient-end));
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 100px; /* Pill shape */
+    font-size: 1em;
+    font-weight: 400; /* SemiBold */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Keep button text on one line */
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+}
+
+/* Beta Testers Section */
+.beta-testers {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between avatars and text */
+    margin-bottom: 50px; /* Space before the card */
+}
+
+.beta-testers .beta-avatars {
+    width: 100px; /* Adjust size to match the combined circles */
+    height: auto;
+    /* The Group 11.png already has the circular crop, so we just size it */
+}
+
+.beta-testers p {
+    font-size: 0.95em;
+    color: var(--text-dark);
+    font-weight: 500; /* Medium */
+}
+
+
+.closed-beta-card {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    /* Adjusted dimensions based on Group 12.png */
+    width: 380px; /* Looks wider in the new image */
+    /* Height will adjust based on content and padding */
+    background-color: rgba(255, 255, 255, 0.4); /* White with 70% opacity for transparency */
+    backdrop-filter: blur(10px); /* Apply a blur effect to the background behind the card */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border-radius: 16px; /* Increased border-radius for softer corners */
+    padding: 25px 30px; /* Adjusted padding to match the internal spacing of the image */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: left;
+    display: block; /* Ensure it behaves as a block element */
+    line-height: 1.5; /* Good default for body text */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* 1px black border stroke, slightly transparent */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* More spread (30px) and more transparent (0.1) */
+}
+
+.closed-beta-card h3 {
+    font-size: 1.1em; /* Slightly smaller for 'OBSRC-Closed Beta' */
+    color: #2ED1B0; /* The text color of the heading is actually the green */
+    margin-bottom: 15px; /* More space below the heading */
+    display: flex; /* Use flexbox to align the dot next to it */
+    align-items: center; /* Vertically align dot with text */
+    gap: 8px; /* Space between text and dot */
+    font-weight: 600; /* Looks a bit bolder */
+}
+
+.closed-beta-card p {
+    font-size: 0.9em; /* Matches the content density in the image */
+    color: #555; /* Slightly darker grey for readability */
+    line-height: 1.6; /* Adjust line height for better readability of the longer text */
+}
+
+/* Green Dot Styling */
+.closed-beta-card .green-dot {
+    display: inline-block;
+    width: 8px; /* Size of the dot */
+    height: 8px; /* Size of the dot */
+    background-color: #2ED1B0; /* The green color */
+    border-radius: 50%; /* Makes it a perfect circle */
+}
+
+/* --- Product Showcase Section Styles --- */
+.product-showcase {
+    background-color: #fff; /* White background for this section */
+    padding: 80px 0; /* Adjust vertical padding */
+    text-align: center; /* Center content within the section */
+}
+
+.product-showcase h2 {
+    font-size: 2.8em; /* Large heading */
+    font-weight: 600; /* Bold */
+    color: #000;
+    margin-bottom: 50px; /* Space below heading */
+    max-width: 900px; /* Limit width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.2;
+}
+
+.product-showcase h2 span {
+    color: #2ED1B0; /* Green color for "built for you." */
+}
+
+.phone-mockups {
+    /* Styles for the container of the phone image */
+    max-width: 1000px; /* Adjust max-width as needed for the image */
+    margin: 0 auto; /* Center the image container */
+}
+
+.phone-mockups img {
+    max-width: 100%; /* Ensure image is responsive and fits its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+}
+
+/* --- Explanatory Text with Image Section Styles --- */
+.text-image-section {
+    background-color: #f8f8f8; /* Light background, similar to body for continuity */
+    padding: 100px 0; /* Adjust vertical padding */
+}
+
+.text-image-section .content-wrapper {
+    display: flex;
+    align-items: flex-start; /* Aligns items to the start of the cross-axis (top) */
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row; /* Ensure default is row for desktop */
+}
+
+.text-image-section .text-content {
+    flex: 1;
+    min-width: 320px;
+    max-width: 550px;
+    text-align: left;
+}
+
+.text-image-section .text-content p {
+    font-size: 0.9em;
+    color: #000;
+    line-height: 1.6;
+}
+
+.text-image-section .text-content p .colored-word {
+    color: #07D6A0;
+    font-weight: bold;
+}
+
+.text-image-section .image-content {
+    flex: 1;
+    min-width: 320px;
+    max-width: 550px;
+    display: flex; /* Use flex to ensure dynamic-image fills it */
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Adjust this height based on the image's aspect ratio in UI */
+    border-radius: 10px; /* Keep this for the container's overall shape */
+    overflow: hidden; /* Crucial to clip the inner background image to the border-radius */
+    box-sizing: border-box;
+    position: relative; /* Needed if you later add overlay effects within this container */
+}
+
+.text-image-section .image-content .dynamic-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 4px solid #07D6A0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: opacity 1s ease-in-out, border-color 0.3s ease; /* Increased opacity transition to 1s */
+    opacity: 1;
+}
+
+/* --- FAQ Section Styles --- */
+.faq-section {
+    padding: 100px 0;
+    background-color: #f8f8f8; /* Light background similar to previous section */
+}
+
+.faq-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: #F8FFE5; /* Updated background color */
+    border: 4px solid #07D6A0; /* Added border */
+    border-radius: 20px;
+    padding: 60px;
+}
+
+.faq-left-column {
+    flex: 1;
+    min-width: 250px; /* Minimum width for the left column */
+    max-width: 350px; /* Max width for the left column */
+}
+
+.faq-left-column h2 {
+    font-size: 2.5em;
+    color: #000000; /* Green color from Group 13.png */
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.faq-left-column p {
+    font-size: medium;
+    color: #555;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.faq-accordion {
+    flex: 2; /* Allow accordion to take more space */
+    min-width: 450px; /* Minimum width for the accordion column */
+    max-width: 700px; /* Max width for the accordion column */
+}
+
+.accordion-item {
+    margin-bottom: 15px; /* Space between accordion items */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Separator line */
+    padding-bottom: 15px; /* Padding for the separator */
+}
+
+.accordion-item:last-child {
+    border-bottom: none; /* No border for the last item */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.accordion-header h3 {
+    font-size: 1.1em; /* Question font size */
+    color: #000;
+    font-weight: 600;
+    flex-grow: 1; /* Allow header text to take available space */
+}
+
+.accordion-icon {
+    width: 20px; /* Size of the chevron icon */
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth rotation for the icon */
+}
+
+/* Styles for the accordion content */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden; /* Keep this for the transition */
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.accordion-content p {
+    font-size: 0.95em;
+    color: #444;
+    line-height: 1.6;
+    padding-right: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* State when accordion item is open */
+.accordion-item.open .accordion-content {
+    max-height: 1200px; /* A sufficiently large value to accommodate content */
+    padding-top: 10px; /* Add padding when open */
+    padding-bottom: 15px;
+}
+
+.accordion-item.open .accordion-icon {
+    transform: rotate(0deg); /* Chevron up, already rotated in assets/images/chevron-up.png */
+}
+
+/* Style for chevron-down.png when accordion is closed */
+.accordion-item:not(.open) .accordion-icon {
+    transform: rotate(180deg); /* Rotate down if it's chevron-down.png */
+}
+
+/* --- Section 5: Bottom Banner Styles (Revised - preserving form/button styles) --- */
+.bottom-banner-section {
+    background-color: #fff; /* White background as seen in Group 14 */
+    padding: 80px 0 100px;
+    text-align: center;
+}
+.bottom-banner-section .bottom-banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.bottom-banner-section .bottom-banner-logo {
+    width: 60px; /* Match hero logo size */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.bottom-banner-section h2 {
+    font-size: 3em;
+    color: var(--primary-dark);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 600;
+    max-width: 600px;
+}
+
+.bottom-banner-section p {
+    font-size: 1.1em;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    max-width: 600px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Ensure the form and button within the bottom banner use the same waitlist-form and btn-primary styles */
+
+
+/* --- ANIMATION STYLES --- */
+
+/* Initial hidden state for all animated elements */
+.initial-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Hero Section Fade In and Bounce */
+/* Uses initial-hidden with fade-in-up class for an initial slight bounce */
+.fade-in-up.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay classes for staggering (use on initial-hidden elements) */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+
+
+/* Product Showcase & Bottom Banner Appear with Animation (fade in from bottom) */
+/* Reuses fade-in-up classes */
+
+
+/* Text and Image Section Slide In from Different Directions */
+.slide-in-left.initial-hidden {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+.slide-in-left.animated {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-right.initial-hidden {
+    opacity: 0;
+    transform: translateX(50px);
+}
+.slide-in-right.animated {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+/* FAQ Cards Pop Up (fade in and slightly scale up) */
+.pop-up.initial-hidden {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+}
+.pop-up.animated {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+
+/* Closed Beta Card Pop In on Page Load */
+.pop-in-card.initial-hidden {
+    opacity: 0;
+    transform: scale(0.8);
+}
+.pop-in-card.animated {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* A "pop" effect */
+}
+/* Media Queries for Responsiveness (Basic for now) */
+@media (max-width: 1024px) {
+    .hero-section h1 {
+        font-size: 2.8em;
+    }
+    .hero-section .sub-headline {
+        font-size: 1.1em;
+    }
+    /* Adjusted closed beta card positioning for larger tablets */
+    .closed-beta-card {
+        right: 20px;
+        bottom: 20px;
+        width: 350px; /* Slightly adjust width */
+    }
+
+    .navbar-nav {
+        gap: 20px; /* Reduce gap between nav items */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile Background Image */
+    .hero-background {
+        background: url('assets/images/bg mobile.png') no-repeat center center/cover;
+        background-attachment: scroll; /* Change to scroll for mobile */
+    }
+
+    /* Hide desktop-only elements */
+    .desktop-only {
+        display: none !important;
+    }
+
+    /* Show mobile-only elements */
+    .mobile-only {
+        display: block !important;
+    }
+
+    .hero-section {
+        padding: 60px 0 80px;
+    }
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+    .hero-section .sub-headline {
+        font-size: 1em;
+    }
+    .waitlist-form {
+        flex-direction: column;
+        padding: 15px;
+        width: 90%;
+        max-width: 400px;
+    }
+    .waitlist-form .input-group {
+        padding-left: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        justify-content: center;
+    }
+    .waitlist-form input[type="email"] {
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+    }
+    .btn-primary {
+        width: 100%;
+        padding: 15px 25px;
+    }
+    .closed-beta-card {
+        position: static; /* Card becomes part of the flow */
+        width: 90%;
+        margin: 40px auto; /* Center it */
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Navbar on smaller screens - Hide desktop nav items, show hamburger */
+    .navbar .container {
+        flex-direction: row; /* Keep logo and hamburger on one row */
+        justify-content: space-between;
+        padding: 0 20px; /* Adjust padding for mobile */
+    }
+    .navbar-nav, .btn-primary-nav {
+        display: none; /* Hide desktop nav links and button */
+    }
+    .hamburger-menu {
+        display: block; /* Show hamburger icon */
+    }
+    .navbar-brand {
+        margin-left: 0; /* Remove extra margin on mobile */
+    }
+
+
+    /* Mobile Drawer Menu Styles */
+    .mobile-drawer {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        transition: right 0.4s ease-in-out;
+        overflow-y: auto; /* Allow scrolling if content is long */
+    }
+
+    .mobile-drawer.open {
+        right: 0; /* Slide in */
+    }
+
+    .drawer-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .close-drawer {
+        font-size: 1.8em;
+        cursor: pointer;
+        color: var(--text-dark);
+    }
+
+    .mobile-drawer .navbar-brand {
+        margin-left: 0; /* Reset margin for drawer logo */
+    }
+
+    .drawer-nav {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 40px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-drawer .nav-item .nav-link {
+        font-size: 1.5em;
+        color: var(--primary-dark);
+        font-weight: 600;
+        padding: 10px 0;
+        display: block; /* Make links full width */
+    }
+
+    .mobile-drawer .btn-primary-nav {
+        width: 80%; /* Make button wider in drawer */
+        max-width: 300px;
+        padding: 15px 25px;
+    }
+
+
+    /* Mobile Phone Mockups - Sticky Scroll Styles */
+    .mobile-phone-mockups-sticky {
+        position: relative;
+        height: 150vh; /* This height creates scroll space for sticky effect */
+        margin-bottom: 50px; /* Space after sticky section */
+    }
+
+    .sticky-phone-wrapper {
+        position: sticky;
+        top: 100px; /* Adjust sticky position from top */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 200px); /* Adjust height for the sticky container */
+        overflow: hidden; /* Hide parts of images that are not active */
+    }
+
+    .sticky-phone {
+        position: absolute;
+        max-width: 80%; /* Adjust size of phones */
+        height: auto;
+        opacity: 0;
+        transform: scale(0.8);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .sticky-phone.active-phone {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* Hidden trigger elements for Intersection Observer */
+    .phone-scroll-trigger {
+        position: absolute;
+        width: 100%;
+        height: 50vh; /* Each trigger covers a scroll portion */
+        /* background-color: rgba(255,0,0,0.1); /* For debugging */
+        z-index: -1; /* Ensure it doesn't block clicks */
+    }
+    #phone-trigger-1 { top: 0vh; } /* First phone active at top of section */
+    #phone-trigger-2 { top: 50vh; } /* Second phone active when scrolled halfway */
+    #phone-trigger-3 { top: 100vh; } /* Third phone active when scrolled further */
+
+
+    .text-image-section .content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .text-image-section .text-content,
+    .text-image-section .image-content {
+        min-width: unset;
+        max-width: 90%;
+        text-align: center;
+    }
+    .text-image-section .image-content {
+        height: 300px;
+    }
+
+    .faq-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px;
+    }
+    .faq-left-column,
+    .faq-accordion {
+        min-width: unset;
+        max-width: 100%;
+    }
+    .faq-left-column {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+    .hero-section .sub-headline {
+        font-size: 0.9em;
+    }
+    .beta-testers {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .mobile-drawer .nav-item .nav-link {
+        font-size: 1.2em; /* Smaller font for very small screens */
+    }
+}
+
+/* Helper classes for showing/hiding elements based on breakpoint */
+.desktop-only {
+    display: block;
+}
+.mobile-only {
+    display: none;
+}

@@ -1,0 +1,326 @@
+/* style.css */
+
+/* 1. Global Resets and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Define your primary colors based on the UI */
+    --primary-green: #00BF9A; /* Adjust if hex is slightly off based on exact sample */
+    --primary-dark: #1A1A1A; /* Or whatever the darkest text color is */
+    --text-light: #F8F8F8; /* For light text on dark backgrounds */
+    --text-dark: #333; /* For dark text on light backgrounds */
+    --gradient-start: #DBFCF5; /* Light greenish-blue */
+    --gradient-end: #C7FCEF; /* Slightly darker greenish-blue */
+    --button-gradient-start: #00BF9A;
+    --button-gradient-end: #00997A;
+    --form-bg: #E0FCF6;
+    --card-bg: #F8F8F8; /* Light background for the beta card */
+    --border-color: #E0E0E0; /* For general borders */
+}
+
+body {
+    font-family: 'Manrope', sans-serif; /* We'll import this next */
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #ffffff; /* Base background */
+    overflow-x: hidden; /* Prevent horizontal scroll from elements like the card */
+}
+
+/* Container for consistent content width */
+.container {
+    max-width: 1200px; /* Adjust based on your visual estimation */
+    margin: 0 auto;
+    padding: 0 20px; /* Some padding on the sides */
+    position: relative; /* For absolute positioning of elements inside */
+    z-index: 2; /* Ensure content is above background */
+}
+
+/* 2. Font Imports (Manrope) */
+/* Assuming Manrope-Regular, Manrope-Medium, Manrope-SemiBold, Manrope-Bold are available */
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-Regular.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Regular.woff') format('woff');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-Medium.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Medium.woff') format('woff');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-SemiBold.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-SemiBold.woff') format('woff');
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('assets/fonts/manrope/Manrope-Bold.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Bold.woff') format('woff');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+}
+
+
+/* 3. Hero Section Styling */
+.hero-section {
+    position: relative; /* For positioning the background and card */
+    padding: 80px 0 100px; /* Top/bottom padding */
+    text-align: center;
+    overflow: hidden; /* Important to contain background and potential overflows */
+    min-height: 700px; /* Adjust minimum height to ensure everything fits */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/images/bg.png') no-repeat center center/cover; /* Use your bg.png */
+    opacity: 0.8; /* Adjust opacity if the background seems too strong */
+    z-index: 1; /* Behind the content */
+}
+
+.hero-section .container {
+    position: relative; /* Ensure content is on top of the background */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Spacing between elements */
+}
+
+.hero-section .logo {
+    width: 60px; /* Adjust size of the logo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    font-size: 3.2em; /* Large, bold headline */
+    color: var(--primary-dark);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 700; /* Bold */
+    max-width: 800px; /* Control width of the headline */
+}
+
+.hero-section .sub-headline {
+    font-size: 1.2em;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    max-width: 600px;
+    line-height: 1.5;
+    font-weight: 400; /* Regular */
+}
+
+/* Waitlist Form Styling */
+.waitlist-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--form-bg); /* Light green background for the form */
+    border-radius: 100px; /* Pill shape */
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    width: fit-content; /* Shrink to content */
+}
+
+.waitlist-form .input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 15px;
+}
+
+.waitlist-form .mail-icon {
+    width: 24px; /* Size of the mail icon */
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(35%) sepia(87%) saturate(1450%) hue-rotate(152deg) brightness(97%) contrast(101%); /* Adjust filter to match icon color if needed, or replace with SVG */
+}
+
+.waitlist-form input[type="email"] {
+    border: none;
+    background: transparent;
+    padding: 10px 0;
+    font-size: 1em;
+    color: var(--primary-dark);
+    min-width: 250px; /* Adjust input width */
+    outline: none; /* Remove outline on focus */
+}
+
+.waitlist-form input[type="email"]::placeholder {
+    color: #999;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--button-gradient-start), var(--button-gradient-end));
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 100px; /* Pill shape */
+    font-size: 1em;
+    font-weight: 600; /* SemiBold */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Keep button text on one line */
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+}
+
+/* Beta Testers Section */
+.beta-testers {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between avatars and text */
+    margin-bottom: 50px; /* Space before the card */
+}
+
+.beta-testers .beta-avatars {
+    width: 100px; /* Adjust size to match the combined circles */
+    height: auto;
+    /* The Group 11.png already has the circular crop, so we just size it */
+}
+
+.beta-testers p {
+    font-size: 0.95em;
+    color: var(--text-dark);
+    font-weight: 500; /* Medium */
+}
+
+
+/* Closed Beta Card Styling */
+.closed-beta-card {
+    position: absolute;
+    top: 250px; /* Adjust vertical position */
+    right: calc(50% - 600px + 50px); /* Position relative to container's right edge (1200px/2 + offset) */
+                                     /* container max-width / 2 + some offset from the edge */
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 25px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 380px; /* Fixed width as seen in UI */
+    text-align: left;
+    z-index: 3; /* Ensure it's above other content */
+    border: 1px solid var(--border-color); /* Subtle border */
+}
+
+.closed-beta-card h3 {
+    font-size: 1.2em;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-weight: 700; /* Bold */
+}
+
+.closed-beta-card p {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 400; /* Regular */
+}
+
+.closed-beta-card .btn-secondary {
+    background-color: transparent;
+    color: var(--primary-green);
+    border: 1px solid var(--primary-green);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.closed-beta-card .btn-secondary:hover {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+
+/* Media Queries for Responsiveness (Basic for now) */
+@media (max-width: 1024px) {
+    .hero-section h1 {
+        font-size: 2.8em;
+    }
+    .hero-section .sub-headline {
+        font-size: 1.1em;
+    }
+    .closed-beta-card {
+        right: 20px; /* Move card closer to the edge */
+        width: 320px;
+        top: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0 80px;
+    }
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+    .hero-section .sub-headline {
+        font-size: 1em;
+    }
+    .waitlist-form {
+        flex-direction: column; /* Stack input and button */
+        padding: 15px;
+        width: 90%;
+        max-width: 400px; /* Limit width on smaller screens */
+    }
+    .waitlist-form .input-group {
+        padding-left: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        justify-content: center;
+    }
+    .waitlist-form input[type="email"] {
+        min-width: unset;
+        width: 100%; /* Take full width */
+        text-align: center;
+    }
+    .btn-primary {
+        width: 100%;
+        padding: 15px 25px;
+    }
+    .closed-beta-card {
+        position: static; /* Remove absolute positioning on small screens */
+        width: 90%;
+        margin: 40px auto 0; /* Center it and give space */
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Smaller shadow */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+    .hero-section .sub-headline {
+        font-size: 0.9em;
+    }
+    .beta-testers {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

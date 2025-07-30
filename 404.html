@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Obserc</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+        /* Specific styles for the 404 page to ensure full height and centering */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            background-color: #ffffff; /* Or your preferred background for 404 */
+            flex-direction: column;
+            padding: 20px; /* Add some padding for smaller screens */
+        }
+
+        .not-found-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .not-found-container h1 {
+            font-size: 2.5em;
+            color: #07D6A0; /* The green color */
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .not-found-container img {
+            max-width: 200px; /* Adjusted: Make the GIF smaller */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .not-found-container .btn-primary {
+            text-decoration: none; /* Ensure link doesn't have underline */
+            display: inline-block; /* Make it behave like a button */
+        }
+
+        @media (max-width: 768px) {
+            .not-found-container h1 {
+                font-size: 1.8em;
+            }
+            .not-found-container img {
+                max-width: 150px; /* Smaller on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="not-found-container">
+        <h1>Oops! Obserc is still constructing this page.</h1>
+        <img src="assets/images/construct.gif" alt="Under Construction GIF">
+        <a href="index.html" class="btn-primary">Back Home</a>
+    </div>
+</body>
+</html>
