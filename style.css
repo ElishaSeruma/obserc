@@ -17,7 +17,7 @@
     --gradient-end: #C7FCEF; /* Slightly darker greenish-blue */
     --button-gradient-start: #07D6A0;
     --button-gradient-end: #07D6A0;
-    --form-bg: #E0FCF6;
+    --form-bg: #F8FFE5;
     --card-bg: #F8F8F8; /* Light background for the beta card */
     --border-color: #E0E0E0; /* For general borders */
 }
@@ -43,40 +43,37 @@ body {
 /* Assuming Manrope-Regular, Manrope-Medium, Manrope-SemiBold, Manrope-Bold are available */
 @font-face {
     font-family: 'Manrope';
-    src: url('Manrope-Regular.woff2') format('woff2'),
-         url('Manrope-Regular.woff') format('woff'),
-         url('Manrope-Regular.ttf') format('truetype'); /* Assuming you converted TTF to WOFF/WOFF2 */
+    src: url('assets/fonts/manrope/Manrope-Regular.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Regular.woff') format('woff');
     font-weight: 400; /* Regular */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('Manrope-Medium.woff2') format('woff2'),
-         url('Manrope-Medium.woff') format('woff'),
-         url('Manrope-Medium.ttf') format('truetype');
+    src: url('assets/fonts/manrope/Manrope-Medium.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Medium.woff') format('woff');
     font-weight: 500; /* Medium */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('Manrope-SemiBold.woff2') format('woff2'),
-         url('Manrope-SemiBold.woff') format('woff'),
-         url('Manrope-SemiBold.ttf') format('truetype');
+    src: url('assets/fonts/manrope/Manrope-SemiBold.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-SemiBold.woff') format('woff');
     font-weight: 600; /* SemiBold */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('Manrope-Bold.woff2') format('woff2'),
-         url('Manrope-Bold.woff') format('woff'),
-         url('Manrope-Bold.ttf') format('truetype');
+    src: url('assets/fonts/manrope/Manrope-Bold.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Bold.woff') format('woff');
     font-weight: 700; /* Bold */
     font-style: normal;
 }
-/* Navbar Styling */
+
+
 .navbar {
     position: fixed; /* Keep navbar at the top */
     top: 0;
@@ -199,39 +196,36 @@ body {
 /* Assuming Manrope-Regular, Manrope-Medium, Manrope-SemiBold, Manrope-Bold are available */
 @font-face {
     font-family: 'Manrope';
-    src: url('Manrope-Regular.woff2') format('woff2'),
-         url('Manrope-Regular.woff') format('woff'),
-         url('Manrope-Regular.ttf') format('truetype'); /* Assuming you converted TTF to WOFF/WOFF2 */
+    src: url('assets/fonts/manrope/Manrope-Regular.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Regular.woff') format('woff');
     font-weight: 400; /* Regular */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('Manrope-Medium.woff2') format('woff2'),
-         url('Manrope-Medium.woff') format('woff'),
-         url('Manrope-Medium.ttf') format('truetype');
+    src: url('assets/fonts/manrope/Manrope-Medium.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Medium.woff') format('woff');
     font-weight: 500; /* Medium */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('Manrope-SemiBold.woff2') format('woff2'),
-         url('Manrope-SemiBold.woff') format('woff'),
-         url('Manrope-SemiBold.ttf') format('truetype');
+    src: url('assets/fonts/manrope/Manrope-SemiBold.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-SemiBold.woff') format('woff');
     font-weight: 600; /* SemiBold */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('Manrope-Bold.woff2') format('woff2'),
-         url('Manrope-Bold.woff') format('woff'),
-         url('Manrope-Bold.ttf') format('truetype');
+    src: url('assets/fonts/manrope/Manrope-Bold.woff2') format('woff2'),
+         url('assets/fonts/manrope/Manrope-Bold.woff') format('woff');
     font-weight: 700; /* Bold */
     font-style: normal;
 }
+
 
 /* 3. Hero Section Styling */
 .hero-section {
@@ -252,7 +246,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('bg.png') no-repeat center center/cover; /* Use your bg.png */
+    background: url('assets/images/bg1.png') no-repeat center center/cover; /* Use your bg.png */
     background-attachment: fixed; /* Add this line */
     opacity: 0.8; /* Adjust opacity if the background seems too strong */
     z-index: 1; /* Behind the content */
@@ -291,6 +285,7 @@ body {
     font-weight: 400; /* Regular */
 }
 
+/* Waitlist Form Styling */
 /* Waitlist Form Styling */
 .waitlist-form {
     display: flex;
@@ -373,47 +368,75 @@ body {
     position: fixed;
     right: 16px;
     bottom: 16px;
-    /* Adjusted dimensions based on Group 12.png */
-    width: 380px; /* Looks wider in the new image */
-    /* Height will adjust based on content and padding */
-    background-color: rgba(255, 255, 255, 0.4); /* White with 70% opacity for transparency */
-    backdrop-filter: blur(10px); /* Apply a blur effect to the background behind the card */
-    -webkit-backdrop-filter: blur(10px); /* For Safari support */
-    border-radius: 16px; /* Increased border-radius for softer corners */
-    padding: 25px 30px; /* Adjusted padding to match the internal spacing of the image */
+    width: 250px; /* Reduced width for mobile initial state */
+    padding: 15px 20px; /* Adjusted padding for smaller size */
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     text-align: left;
-    display: block; /* Ensure it behaves as a block element */
-    line-height: 1.5; /* Good default for body text */
-    border: 1px solid rgba(0, 0, 0, 0.1); /* 1px black border stroke, slightly transparent */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* More spread (30px) and more transparent (0.1) */
+    display: block;
+    line-height: 1.5;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease, padding 0.3s ease, height 0.3s ease; /* Smooth transition for expansion */
+    overflow: hidden; /* Hide content when collapsed */
 }
 
 .closed-beta-card h3 {
-    font-size: 1.1em; /* Slightly smaller for 'OBSRC-Closed Beta' */
-    color: #2ED1B0; /* The text color of the heading is actually the green */
-    margin-bottom: 15px; /* More space below the heading */
-    display: flex; /* Use flexbox to align the dot next to it */
-    align-items: center; /* Vertically align dot with text */
-    gap: 8px; /* Space between text and dot */
-    font-weight: 600; /* Looks a bit bolder */
+    font-size: 1.1em;
+    color: #2ED1B0;
+    margin-bottom: 10px; /* Reduced margin for smaller size */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
 }
 
 .closed-beta-card p {
-    font-size: 0.9em; /* Matches the content density in the image */
-    color: #555; /* Slightly darker grey for readability */
-    line-height: 1.6; /* Adjust line height for better readability of the longer text */
+    font-size: 0.85em; /* Reduced font size for initial state */
+    color: #555;
+    line-height: 1.4;
+    display: none; /* Hide full text initially */
 }
 
 /* Green Dot Styling */
 .closed-beta-card .green-dot {
     display: inline-block;
-    width: 8px; /* Size of the dot */
-    height: 8px; /* Size of the dot */
-    background-color: #2ED1B0; /* The green color */
-    border-radius: 50%; /* Makes it a perfect circle */
+    width: 8px;
+    height: 8px;
+    background-color: #2ED1B0;
+    border-radius: 50%;
 }
+
+/* Expanded State */
+.closed-beta-card.expanded {
+    width: 350px; /* Expanded width for mobile */
+    padding: 25px 30px; /* Restore padding to match web */
+    height: auto; /* Allow height to adjust with content */
+}
+
+.closed-beta-card.expanded p {
+    display: block; /* Show full text when expanded */
+}
+
+/* Close Icon Styling */
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: none; /* Hide initially */
+}
+
+.close-icon.expanded {
+    display: block; /* Show when card is expanded */
+}
+
 
 /* --- Product Showcase Section Styles --- */
 .product-showcase {
@@ -459,9 +482,9 @@ body {
     display: flex;
     align-items: flex-start; /* Aligns items to the start of the cross-axis (top) */
     gap: 50px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
     justify-content: center;
-    flex-direction: row; /* Ensure default is row for desktop */
+    flex-direction: row; /* Default row for desktop */
 }
 
 .text-image-section .text-content {
@@ -486,14 +509,14 @@ body {
     flex: 1;
     min-width: 320px;
     max-width: 550px;
-    display: flex; /* Use flex to ensure dynamic-image fills it */
+    display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px; /* Adjust this height based on the image's aspect ratio in UI */
-    border-radius: 10px; /* Keep this for the container's overall shape */
-    overflow: hidden; /* Crucial to clip the inner background image to the border-radius */
+    height: 400px; /* Default height */
+    border-radius: 10px;
+    overflow: hidden;
     box-sizing: border-box;
-    position: relative; /* Needed if you later add overlay effects within this container */
+    position: relative;
 }
 
 .text-image-section .image-content .dynamic-image {
@@ -505,10 +528,9 @@ body {
     border: 4px solid #07D6A0;
     border-radius: 10px;
     box-sizing: border-box;
-    transition: opacity 1s ease-in-out, border-color 0.3s ease; /* Increased opacity transition to 1s */
+    transition: opacity 1s ease-in-out, border-color 0.3s ease;
     opacity: 1;
 }
-
 /* --- FAQ Section Styles --- */
 .faq-section {
     padding: 100px 0;
@@ -530,6 +552,7 @@ body {
     flex: 1;
     min-width: 250px; /* Minimum width for the left column */
     max-width: 350px; /* Max width for the left column */
+    
 }
 
 .faq-left-column h2 {
@@ -619,12 +642,15 @@ body {
     transform: rotate(180deg); /* Rotate down if it's chevron-down.png */
 }
 
+
+
 /* --- Section 5: Bottom Banner Styles (Revised - preserving form/button styles) --- */
 .bottom-banner-section {
-    background-color: #fff; /* White background as seen in Group 14 */
-    padding: 80px 0 100px;
-    text-align: center;
+  background: linear-gradient(to bottom, #F8F8F8, #F0FFF0);
+  padding: 80px 0 100px;
+  text-align: center;
 }
+
 .bottom-banner-section .bottom-banner-content {
     display: flex;
     flex-direction: column;
@@ -739,22 +765,88 @@ body {
     .hero-section .sub-headline {
         font-size: 1.1em;
     }
-    /* Adjusted closed beta card positioning for larger tablets */
+    @media (max-width: 768px) {
     .closed-beta-card {
-        right: 20px;
-        bottom: 20px;
-        width: 350px; /* Slightly adjust width */
+        width: 200px; /* Even smaller initial width for mobile */
+        padding: 10px 15px;
     }
+
+    .closed-beta-card.expanded {
+        width: 90%; /* Full width on mobile when expanded */
+        max-width: 350px;
+        right: 5%;
+        bottom: 5%;
+        padding: 20px;
+    }
+
+    .closed-beta-card h3 {
+        font-size: 1em;
+    }
+
+    .closed-beta-card p {
+        font-size: 0.8em;
+    }
+}
+
 
     .navbar-nav {
         gap: 20px; /* Reduce gap between nav items */
+    }
+}
+@media (max-width: 768px) {
+    .text-image-section {
+        padding: 60px 0; /* Reduced padding for mobile */
+    }
+
+    .text-image-section .content-wrapper {
+        flex-direction: column; /* Stack text and image vertically */
+        gap: 30px; /* Reduced gap between sections */
+    }
+
+    .text-image-section .text-content,
+    .text-image-section .image-content {
+        min-width: unset; /* Remove min-width constraint */
+        max-width: 100%; /* Full width on mobile */
+        text-align: center; /* Center text on mobile */
+    }
+
+    .text-image-section .text-content p {
+        font-size: 0.85em; /* Slightly smaller font for mobile */
+    }
+
+    .text-image-section .image-content {
+        height: 250px; /* Reduced height for mobile */
+    }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand,
+  .btn-primary-nav {
+    display: none !important;
+  }
+
+  .navbar-nav {
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 0.85em;
+  }
+}
+@media (max-width: 480px) {
+    .text-image-section .text-content p {
+        font-size: 0.8em; /* Even smaller font for very small screens */
+    }
+
+    .text-image-section .image-content {
+        height: 200px; /* Further reduced height for very small screens */
     }
 }
 
 @media (max-width: 768px) {
     /* Mobile Background Image */
     .hero-background {
-        background: url('bg mobile.png') no-repeat center center/cover;
+        background: url('assets/images/bg mobile.png') no-repeat center center/cover;
         background-attachment: scroll; /* Change to scroll for mobile */
     }
 
@@ -782,43 +874,52 @@ body {
         padding: 15px;
         width: 90%;
         max-width: 400px;
+        border-radius: 16px; /* Slightly larger radius for mobile */
     }
     .waitlist-form .input-group {
         padding-left: 0;
         margin-bottom: 15px;
         width: 100%;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .waitlist-form .mail-icon {
+        display: none; /* Hide icon on mobile for simplicity */
     }
     .waitlist-form input[type="email"] {
         min-width: unset;
         width: 100%;
         text-align: center;
+        padding: 12px;
+        border-radius: 100px;
+        background-color: rgba(255, 255, 255, 0.8);
     }
     .btn-primary {
         width: 100%;
-        padding: 15px 25px;
+        padding: 12px 25px;
+        border-radius: 100px;
     }
     .closed-beta-card {
-        position: static; /* Card becomes part of the flow */
-        width: 90%;
-        margin: 40px auto; /* Center it */
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        width: 200px; /* Even smaller initial width for mobile */
+        padding: 10px 15px;
+        position: fixed; /* Ensure fixed positioning */
+        right: 16px;
+        bottom: 16px;
     }
-
-    /* Navbar on smaller screens - Hide desktop nav items, show hamburger */
-    .navbar .container {
-        flex-direction: row; /* Keep logo and hamburger on one row */
-        justify-content: space-between;
-        padding: 0 20px; /* Adjust padding for mobile */
+    .closed-beta-card.expanded {
+        width: 90%; /* Full width on mobile when expanded */
+        max-width: 350px;
+        right: 5%;
+        bottom: 5%;
+        padding: 20px;
     }
-    .navbar-nav, .btn-primary-nav {
-        display: none; /* Hide desktop nav links and button */
+    .closed-beta-card h3 {
+        font-size: 1em;
     }
-    .hamburger-menu {
-        display: block; /* Show hamburger icon */
-    }
-    .navbar-brand {
-        margin-left: 0; /* Remove extra margin on mobile */
+    .closed-beta-card p {
+        font-size: 0.8em;
     }
 
 
@@ -962,6 +1063,63 @@ body {
         text-align: center;
     }
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 40px 0; /* Reduced padding for mobile */
+    }
+
+    .faq-container {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 20px; /* Reduced gap between sections */
+        padding: 20px; /* Reduced padding for mobile */
+        border-radius: 15px; /* Slightly smaller radius */
+        text-align: center
+    }
+
+    .faq-left-column,
+    .faq-accordion {
+        min-width: unset; /* Remove min-width constraint */
+        max-width: 100%; /* Full width on mobile */
+        text-align: center; /* Center align for mobile */
+    }
+
+    .faq-left-column h2 {
+        font-size: 1.8em; /* Smaller heading for mobile */
+        text-align: center; /* Center align for mobile */
+        color: #F8FFE5;
+    }
+
+    .faq-left-column p {
+        font-size: 0.9em; /* Smaller text for mobile */
+        text-align: center; /* Center align for mobile */
+        color: #F8FFE5;
+    }
+
+    .accordion-header h3 {
+        font-size: 0.95em; /* Smaller question font size */
+    }
+
+    .accordion-content p {
+        font-size: 0.85em; /* Smaller content font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-left-column h2 {
+        font-size: 1.5em; /* Even smaller heading for very small screens */
+    }
+
+    .accordion-header h3 {
+        font-size: 0.9em; /* Even smaller question font size */
+    }
+
+    .accordion-content p {
+        font-size: 0.8em; /* Even smaller content font size */
+    }
+}
+
 
 @media (max-width: 480px) {
     .hero-section h1 {
