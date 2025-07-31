@@ -2,10 +2,10 @@
         const dynamicImage = document.querySelector('.dynamic-image');
         const imageContainer = document.querySelector('.image-content');
         const images = [
-            'assets/images/people1.jpg',
-            'assets/images/people2.jpg',
-            'assets/images/people3.jpg',
-            'assets/images/people4.jpg'
+            'people1.jpg',
+            'people2.jpg',
+            'people3.jpg',
+            'people4.jpg'
         ];
         const colors = ['#07D6A0', '#2ED1B0', '#0ABF91', '#5CDB95'];
         let currentImageIndex = 0;
@@ -45,11 +45,11 @@
                     accordionContent.style.maxHeight = '0px';
                     void accordionContent.offsetWidth;
                     accordionContent.style.maxHeight = contentHeight + 'px';
-                    accordionIcon.src = 'assets/images/chevron-up.png';
+                    accordionIcon.src = 'chevron-up.png';
                 } else {
                     accordionItem.classList.remove('open');
                     accordionContent.style.maxHeight = '0px';
-                    accordionIcon.src = 'assets/images/chevron-down.png';
+                    accordionIcon.src = 'chevron-down.png';
                 }
             });
         });
@@ -74,7 +74,7 @@
                     initialHeight = 1000;
                 }
                 firstAccordionContent.style.maxHeight = initialHeight + 'px';
-                firstAccordionIcon.src = 'assets/images/chevron-up.png';
+                firstAccordionIcon.src = 'chevron-up.png';
             }
 
             const animateOnScroll = (entries, observer) => {
