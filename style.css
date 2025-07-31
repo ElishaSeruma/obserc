@@ -43,32 +43,32 @@ body {
 /* Assuming Manrope-Regular, Manrope-Medium, Manrope-SemiBold, Manrope-Bold are available */
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-Regular.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-Regular.woff') format('woff');
+    src: url('Manrope-Regular.woff2') format('woff2'),
+         url('Manrope-Regular.woff') format('woff');
     font-weight: 400; /* Regular */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-Medium.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-Medium.woff') format('woff');
+    src: url('Manrope-Medium.woff2') format('woff2'),
+         url('Manrope-Medium.woff') format('woff');
     font-weight: 500; /* Medium */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-SemiBold.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-SemiBold.woff') format('woff');
+    src: url('Manrope-SemiBold.woff2') format('woff2'),
+         url('Manrope-SemiBold.woff') format('woff');
     font-weight: 600; /* SemiBold */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-Bold.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-Bold.woff') format('woff');
+    src: url('Manrope-Bold.woff2') format('woff2'),
+         url('Manrope-Bold.woff') format('woff');
     font-weight: 700; /* Bold */
     font-style: normal;
 }
@@ -196,32 +196,32 @@ body {
 /* Assuming Manrope-Regular, Manrope-Medium, Manrope-SemiBold, Manrope-Bold are available */
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-Regular.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-Regular.woff') format('woff');
+    src: url('Manrope-Regular.woff2') format('woff2'),
+         url('Manrope-Regular.woff') format('woff');
     font-weight: 400; /* Regular */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-Medium.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-Medium.woff') format('woff');
+    src: url('Manrope-Medium.woff2') format('woff2'),
+         url('Manrope-Medium.woff') format('woff');
     font-weight: 500; /* Medium */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-SemiBold.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-SemiBold.woff') format('woff');
+    src: url('Manrope-SemiBold.woff2') format('woff2'),
+         url('Manrope-SemiBold.woff') format('woff');
     font-weight: 600; /* SemiBold */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('assets/fonts/manrope/Manrope-Bold.woff2') format('woff2'),
-         url('assets/fonts/manrope/Manrope-Bold.woff') format('woff');
+    src: url('Manrope-Bold.woff2') format('woff2'),
+         url('Manrope-Bold.woff') format('woff');
     font-weight: 700; /* Bold */
     font-style: normal;
 }
@@ -246,7 +246,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('assets/images/bg1.png') no-repeat center center/cover; /* Use your bg.png */
+    background: url('bg1.png') no-repeat center center/cover; /* Use your bg.png */
     background-attachment: fixed; /* Add this line */
     opacity: 0.8; /* Adjust opacity if the background seems too strong */
     z-index: 1; /* Behind the content */
@@ -634,7 +634,7 @@ body {
 }
 
 .accordion-item.open .accordion-icon {
-    transform: rotate(0deg); /* Chevron up, already rotated in assets/images/chevron-up.png */
+    transform: rotate(0deg); /* Chevron up, already rotated in chevron-up.png */
 }
 
 /* Style for chevron-down.png when accordion is closed */
@@ -846,7 +846,7 @@ body {
 @media (max-width: 768px) {
     /* Mobile Background Image */
     .hero-background {
-        background: url('assets/images/bg mobile.png') no-repeat center center/cover;
+        background: url('bg mobile.png') no-repeat center center/cover;
         background-attachment: scroll; /* Change to scroll for mobile */
     }
 
