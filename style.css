@@ -9,38 +9,38 @@
 
 :root {
     /* Define your primary colors based on the UI */
-    --primary-green: #07D6A09A; /* Adjust if hex is slightly off based on exact sample */
-    --primary-dark: #1A1A1A; /* Or whatever the darkest text color is */
-    --text-light: #F8F8F8; /* For light text on dark backgrounds */
-    --text-dark: #333; /* For dark text on light backgrounds */
-    --gradient-start: #DBFCF5; /* Light greenish-blue */
-    --gradient-end: #C7FCEF; /* Slightly darker greenish-blue */
+    --primary-green: #07D6A0;
+    --primary-dark: #0A3300; 
+    --text-light: #F8F8F8; 
+    --text-dark: #333; 
+    --gradient-start: #DBFCF5;
+    --gradient-end: #C7FCEF;
     --button-gradient-start: #07D6A0;
     --button-gradient-end: #07D6A0;
     --form-bg: #F8FFE5;
-    --card-bg: #F8F8F8; /* Light background for the beta card */
-    --border-color: #E0E0E0; /* For general borders */
+    --card-bg: #F8F8F8; 
+    --border-color: #E0E0E0; 
 }
 
 body {
-    font-family: 'Manrope', sans-serif; /* We'll import this next */
+    font-family: 'Manrope', sans-serif; 
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: #ffffff; /* Base background */
-    overflow-x: hidden; /* Prevent horizontal scroll from elements like the card */
+    background-color: #ffffff; 
+    overflow-x: hidden; 
 }
 
-/* Container for consistent content width */
+
 .container {
-    max-width: 1200px; /* Adjust based on your visual estimation */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Some padding on the sides */
-    position: relative; /* For absolute positioning of elements inside */
-    z-index: 2; /* Ensure content is above background */
+    padding: 0 20px; 
+    position: relative; 
+    z-index: 2; 
 }
 
-/* 2. Font Imports (Manrope) */
-/* Assuming Manrope-Regular, Manrope-Medium, Manrope-SemiBold, Manrope-Bold are available */
+
+
 @font-face {
     font-family: 'Manrope';
     src: url('Manrope-Regular.woff2') format('woff2'),
@@ -75,27 +75,27 @@ body {
 
 
 .navbar {
-    position: fixed; /* Keep navbar at the top */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 0; /* Default padding for non-scrolled state */
+    padding: 15px 0; 
 
-    /* Apply closed-beta-card background and blur to the base navbar */
-    background-color: rgba(255, 255, 255, 0.4); /* White with 40% opacity from card */
-    backdrop-filter: blur(10px); /* Apply a blur effect to the background behind the navbar */
-    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
 
     transition: background-color 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease, padding 0.3s ease, border 0.3s ease;
-    z-index: 100; /* Ensure it's above other content */
-    border-radius: 16px; /* Initial border-radius */
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Initial border */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Initial box-shadow */
+    z-index: 100; 
+    border-radius: 16px; 
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
 }
 
 .navbar .container {
     display: flex;
-    justify-content: space-between; /* Distribute items */
+    justify-content: space-between; 
     align-items: center;
 }
 
@@ -107,24 +107,24 @@ body {
     text-decoration: none;
     font-weight: 400;
     font-size: 1.0em;
-    margin-left: 30px; /* Adjust this value as needed to extend left */
+    margin-left: 30px; 
 }
 
 .navbar-brand img {
-    height: 30px; /* Adjust logo size */
+    height: 30px;
 }
 
 .navbar-nav {
     list-style: none;
     display: flex;
     gap: 30px;
-    flex-grow: 1; /* Allow navigation links to take available space */
-    justify-content: center; /* Center the navigation links */
+    flex-grow: 1;
+    justify-content: center; 
 }
 
-/* Nav Link base style - ensure it has padding and position: relative */
+
 .nav-link {
-    color: var(--text-dark); /* Default text color is black/dark */
+    color: var(--text-dark); 
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease, font-weight 0.3s ease;
@@ -132,68 +132,67 @@ body {
     position: relative;
 }
 
-/* Active Nav Link Indicator (green bar is constant here) */
+
 .nav-link.active {
-    color: var(--text-dark); /* Active link text color remains dark/black */
-    font-weight: 600; /* Slightly bolder for active */
+    color: var(--text-dark); 
+    font-weight: 600; 
 }
 
 .nav-link.active::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -3px; /* Position the bar below the text */
+    bottom: -3px; 
     width: 100%;
-    height: 2px; /* Thickness of the green bar */
-    background-color: #07D6A0; /* Green color for the bar */
+    height: 2px;
+    background-color: #07D6A0; 
     border-radius: 2px;
-    transform: scaleX(1); /* Ensure it's fully visible and constant */
+    transform: scaleX(1); 
     transform-origin: left center;
 }
 
-/* Hover Effect for ALL Nav Links (text color only) */
-.nav-link:hover { /* This rule now applies to all links on hover */
-    color: #07D6A0; /* Change text color to green on hover */
+
+.nav-link:hover { 
+    color: #07D6A0; 
 }
-/* Navbar Button (Get Early Access) */
+
 .btn-primary-nav {
-    background: linear-gradient(to right, #07D6A0, #07D6A0); /* Solid green background */
+    background: linear-gradient(to right, #07D6A0, #07D6A0); 
     color: white;
-    padding: 10px 20px; /* Slightly smaller padding for navbar button */
+    padding: 10px 20px; 
     border: none;
-    border-radius: 100px; /* Pill shape */
+    border-radius: 100px;
     font-size: 0.9em;
-    font-weight: 300; /* SemiBold */
+    font-weight: 300;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     white-space: nowrap;
-    margin-right: 30px; /* Adjust this value as needed to extend right */
+    margin-right: 30px; 
 }
 
 .btn-primary-nav:hover {
     filter: brightness(1.1);
-    transform: translateY(-2px); /* Subtle lift effect */
+    transform: translateY(-2px);
 }
 
-/* Navbar Scrolled State - Only applies radius, border, and specific box-shadow */
+
 .navbar.scrolled {
-    padding: 10px 0; /* Slightly reduce padding on scroll */
-    border-radius: 16px; /* Full border-radius when scrolled */
-    border: 1px solid #BFBFBF; /* Add border when scrolled */
-    box-shadow: 0 3px 13px 34px rgba(0, 0, 0, 0.16); /* New box shadow: 0 3px 13px 34px black with 16% opacity */
-    /* Background-color and backdrop-filter are already applied by the base .navbar */
-}
-/* Container for consistent content width */
-.container {
-    max-width: 1200px; /* Adjust based on your visual estimation */
-    margin: 0 auto;
-    padding: 0 20px; /* Some padding on the sides */
-    position: relative; /* For absolute positioning of elements inside */
-    z-index: 2; /* Ensure content is above background */
+    padding: 10px 0; 
+    border-radius: 16px; 
+    border: 1px solid #BFBFBF; 
+    box-shadow: 0 3px 13px 34px rgba(0, 0, 0, 0.16);
+    
 }
 
-/* 2. Font Imports (Manrope) */
-/* Assuming Manrope-Regular, Manrope-Medium, Manrope-SemiBold, Manrope-Bold are available */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; 
+    position: relative; 
+    z-index: 2; 
+}
+
+
 @font-face {
     font-family: 'Manrope';
     src: url('Manrope-Regular.woff2') format('woff2'),
@@ -206,7 +205,7 @@ body {
     font-family: 'Manrope';
     src: url('Manrope-Medium.woff2') format('woff2'),
          url('Manrope-Medium.woff') format('woff');
-    font-weight: 500; /* Medium */
+    font-weight: 500; 
     font-style: normal;
 }
 
@@ -214,7 +213,7 @@ body {
     font-family: 'Manrope';
     src: url('Manrope-SemiBold.woff2') format('woff2'),
          url('Manrope-SemiBold.woff') format('woff');
-    font-weight: 600; /* SemiBold */
+    font-weight: 600; 
     font-style: normal;
 }
 
@@ -222,18 +221,18 @@ body {
     font-family: 'Manrope';
     src: url('Manrope-Bold.woff2') format('woff2'),
          url('Manrope-Bold.woff') format('woff');
-    font-weight: 700; /* Bold */
+    font-weight: 700; 
     font-style: normal;
 }
 
 
-/* 3. Hero Section Styling */
+
 .hero-section {
-    position: relative; /* For positioning the background and card */
-    padding: 80px 0 100px; /* Top/bottom padding */
+    position: relative; 
+    padding: 80px 0 100px; 
     text-align: center;
-    overflow: hidden; /* Important to contain background and potential overflows */
-    min-height: 700px; /* Adjust minimum height to ensure everything fits */
+    overflow: hidden; 
+    min-height: 700px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -246,34 +245,34 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('bg1.png') no-repeat center center/cover; /* Use your bg.png */
-    background-attachment: fixed; /* Add this line */
-    opacity: 0.8; /* Adjust opacity if the background seems too strong */
-    z-index: 1; /* Behind the content */
+    background: url('bg1.png') no-repeat center center/cover; 
+    background-attachment: fixed; 
+    opacity: 0.8; 
+    z-index: 1; 
 }
 
 .hero-section .container {
-    position: relative; /* Ensure content is on top of the background */
+    position: relative; 
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Spacing between elements */
+    gap: 20px; 
 }
 
 .hero-section .logo {
-    width: 60px; /* Adjust size of the logo */
+    width: 60px; 
     height: auto;
     margin-bottom: 20px;
 }
 
 .hero-section h1 {
-    font-size: 3.2em; /* Large, bold headline */
+    font-size: 3.2em; 
     color: var(--primary-dark);
     line-height: 1.1;
     margin-bottom: 20px;
-    font-weight: 600; /* Bold */
-    max-width: 800px; /* Control width of the headline */
+    font-weight: 600;
+    max-width: 800px; 
 }
 
 .hero-section .sub-headline {
@@ -282,21 +281,20 @@ body {
     margin-bottom: 30px;
     max-width: 600px;
     line-height: 1.5;
-    font-weight: 400; /* Regular */
+    font-weight: 400; 
 }
 
-/* Waitlist Form Styling */
-/* Waitlist Form Styling */
+
 .waitlist-form {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--form-bg); /* Light green background for the form */
-    border-radius: 100px; /* Pill shape */
+    background-color: var(--form-bg); 
+    border-radius: 100px; 
     padding: 8px 10px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
-    width: fit-content; /* Shrink to content */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    width: fit-content; 
 }
 
 .waitlist-form .input-group {
@@ -307,7 +305,7 @@ body {
 }
 
 .waitlist-form .mail-icon {
-    width: 24px; /* Size of the mail icon */
+    width: 24px; 
     height: auto;
     filter: brightness(0) saturate(100%) invert(35%) sepia(87%) saturate(1450%) hue-rotate(152deg) brightness(97%) contrast(101%); /* Adjust filter to match icon color if needed, or replace with SVG */
 }
@@ -318,8 +316,8 @@ body {
     padding: 10px 0;
     font-size: 1em;
     color: var(--primary-dark);
-    min-width: 250px; /* Adjust input width */
-    outline: none; /* Remove outline on focus */
+    min-width: 250px; 
+    outline: none; 
 }
 
 .waitlist-form input[type="email"]::placeholder {
@@ -331,36 +329,36 @@ body {
     color: white;
     padding: 12px 25px;
     border: none;
-    border-radius: 100px; /* Pill shape */
+    border-radius: 100px;
     font-size: 1em;
-    font-weight: 400; /* SemiBold */
+    font-weight: 400; 
     cursor: pointer;
     transition: background-color 0.3s ease;
-    white-space: nowrap; /* Keep button text on one line */
+    white-space: nowrap; 
 }
 
 .btn-primary:hover {
     filter: brightness(1.1);
 }
 
-/* Beta Testers Section */
+
 .beta-testers {
     display: flex;
     align-items: center;
-    gap: 15px; /* Space between avatars and text */
-    margin-bottom: 50px; /* Space before the card */
+    gap: 15px; 
+    margin-bottom: 50px; 
 }
 
 .beta-testers .beta-avatars {
-    width: 100px; /* Adjust size to match the combined circles */
+    width: 100px; 
     height: auto;
-    /* The Group 11.png already has the circular crop, so we just size it */
+   
 }
 
 .beta-testers p {
     font-size: 0.95em;
     color: var(--text-dark);
-    font-weight: 500; /* Medium */
+    font-weight: 500;
 }
 
 
@@ -368,8 +366,8 @@ body {
     position: fixed;
     right: 16px;
     bottom: 16px;
-    width: 250px; /* Reduced width for mobile initial state */
-    padding: 15px 20px; /* Adjusted padding for smaller size */
+    width: 250px; 
+    padding: 15px 20px; 
     background-color: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -381,14 +379,14 @@ body {
     line-height: 1.5;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: width 0.3s ease, padding 0.3s ease, height 0.3s ease; /* Smooth transition for expansion */
-    overflow: hidden; /* Hide content when collapsed */
+    transition: width 0.3s ease, padding 0.3s ease, height 0.3s ease; 
+    overflow: hidden; 
 }
 
 .closed-beta-card h3 {
     font-size: 1.1em;
     color: #2ED1B0;
-    margin-bottom: 10px; /* Reduced margin for smaller size */
+    margin-bottom: 10px; 
     display: flex;
     align-items: center;
     gap: 8px;
@@ -396,13 +394,13 @@ body {
 }
 
 .closed-beta-card p {
-    font-size: 0.85em; /* Reduced font size for initial state */
+    font-size: 0.85em; 
     color: #555;
     line-height: 1.4;
-    display: none; /* Hide full text initially */
+    display: none; 
 }
 
-/* Green Dot Styling */
+
 .closed-beta-card .green-dot {
     display: inline-block;
     width: 8px;
@@ -411,18 +409,18 @@ body {
     border-radius: 50%;
 }
 
-/* Expanded State */
+
 .closed-beta-card.expanded {
-    width: 350px; /* Expanded width for mobile */
-    padding: 25px 30px; /* Restore padding to match web */
-    height: auto; /* Allow height to adjust with content */
+    width: 350px; 
+    padding: 25px 30px; 
+    height: auto; 
 }
 
 .closed-beta-card.expanded p {
-    display: block; /* Show full text when expanded */
+    display: block; 
 }
 
-/* Close Icon Styling */
+
 .close-icon {
     position: absolute;
     top: 10px;
@@ -430,61 +428,61 @@ body {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    display: none; /* Hide initially */
+    display: none; 
 }
 
 .close-icon.expanded {
-    display: block; /* Show when card is expanded */
+    display: block; 
 }
 
 
-/* --- Product Showcase Section Styles --- */
+
 .product-showcase {
-    background-color: #fff; /* White background for this section */
-    padding: 80px 0; /* Adjust vertical padding */
-    text-align: center; /* Center content within the section */
+    background-color: #fff; 
+    padding: 80px 0; 
+    text-align: center; 
 }
 
 .product-showcase h2 {
-    font-size: 2.8em; /* Large heading */
-    font-weight: 600; /* Bold */
+    font-size: 2.8em; 
+    font-weight: 600; 
     color: #000;
-    margin-bottom: 50px; /* Space below heading */
-    max-width: 900px; /* Limit width for readability */
+    margin-bottom: 50px; 
+    max-width: 900px; 
     margin-left: auto;
     margin-right: auto;
     line-height: 1.2;
 }
 
 .product-showcase h2 span {
-    color: #2ED1B0; /* Green color for "built for you." */
+    color: #2ED1B0;
 }
 
 .phone-mockups {
-    /* Styles for the container of the phone image */
-    max-width: 1000px; /* Adjust max-width as needed for the image */
-    margin: 0 auto; /* Center the image container */
+    
+    max-width: 1000px; 
+    margin: 0 auto; 
 }
 
 .phone-mockups img {
-    max-width: 100%; /* Ensure image is responsive and fits its container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove extra space below image */
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
 }
 
-/* --- Explanatory Text with Image Section Styles --- */
+
 .text-image-section {
-    background-color: #f8f8f8; /* Light background, similar to body for continuity */
-    padding: 100px 0; /* Adjust vertical padding */
+    background-color: #f8f8f8; 
+    padding: 100px 0; 
 }
 
 .text-image-section .content-wrapper {
     display: flex;
-    align-items: flex-start; /* Aligns items to the start of the cross-axis (top) */
+    align-items: flex-start;
     gap: 50px;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap; 
     justify-content: center;
-    flex-direction: row; /* Default row for desktop */
+    flex-direction: row; 
 }
 
 .text-image-section .text-content {
@@ -512,7 +510,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px; /* Default height */
+    height: 400px; 
     border-radius: 10px;
     overflow: hidden;
     box-sizing: border-box;
@@ -531,10 +529,10 @@ body {
     transition: opacity 1s ease-in-out, border-color 0.3s ease;
     opacity: 1;
 }
-/* --- FAQ Section Styles --- */
+
 .faq-section {
     padding: 100px 0;
-    background-color: #f8f8f8; /* Light background similar to previous section */
+    background-color: #f8f8f8; 
 }
 
 .faq-container {
@@ -542,22 +540,22 @@ body {
     gap: 50px;
     align-items: flex-start;
     flex-wrap: wrap;
-    background-color: #F8FFE5; /* Updated background color */
-    border: 4px solid #07D6A0; /* Added border */
+    background-color: #F8FFE5; 
+    border: 4px solid #07D6A0; 
     border-radius: 20px;
     padding: 60px;
 }
 
 .faq-left-column {
     flex: 1;
-    min-width: 250px; /* Minimum width for the left column */
-    max-width: 350px; /* Max width for the left column */
+    min-width: 250px; 
+    max-width: 350px; 
     
 }
 
 .faq-left-column h2 {
     font-size: 2.5em;
-    color: #000000; /* Green color from Group 13.png */
+    color: #000000; 
     margin-bottom: 15px;
     font-weight: 400;
 }
@@ -570,19 +568,19 @@ body {
 }
 
 .faq-accordion {
-    flex: 2; /* Allow accordion to take more space */
-    min-width: 450px; /* Minimum width for the accordion column */
-    max-width: 700px; /* Max width for the accordion column */
+    flex: 2; 
+    min-width: 450px; 
+    max-width: 700px; 
 }
 
 .accordion-item {
-    margin-bottom: 15px; /* Space between accordion items */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Separator line */
-    padding-bottom: 15px; /* Padding for the separator */
+    margin-bottom: 15px; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+    padding-bottom: 15px; 
 }
 
 .accordion-item:last-child {
-    border-bottom: none; /* No border for the last item */
+    border-bottom: none; 
     margin-bottom: 0;
     padding-bottom: 0;
 }
@@ -596,22 +594,22 @@ body {
 }
 
 .accordion-header h3 {
-    font-size: 1.1em; /* Question font size */
+    font-size: 1.1em; 
     color: #000;
     font-weight: 600;
-    flex-grow: 1; /* Allow header text to take available space */
+    flex-grow: 1; 
 }
 
 .accordion-icon {
-    width: 20px; /* Size of the chevron icon */
+    width: 20px; 
     height: auto;
-    transition: transform 0.3s ease; /* Smooth rotation for the icon */
+    transition: transform 0.3s ease;
 }
 
-/* Styles for the accordion content */
+
 .accordion-content {
     max-height: 0;
-    overflow: hidden; /* Keep this for the transition */
+    overflow: hidden;
     transition: max-height 0.5s ease-out, padding 0.5s ease-out;
     padding-top: 0;
     padding-bottom: 0;
@@ -626,25 +624,25 @@ body {
     margin-bottom: 0;
 }
 
-/* State when accordion item is open */
+
 .accordion-item.open .accordion-content {
-    max-height: 1200px; /* A sufficiently large value to accommodate content */
-    padding-top: 10px; /* Add padding when open */
+    max-height: 1200px; 
+    padding-top: 10px; 
     padding-bottom: 15px;
 }
 
 .accordion-item.open .accordion-icon {
-    transform: rotate(0deg); /* Chevron up, already rotated in chevron-up.png */
+    transform: rotate(0deg);
 }
 
-/* Style for chevron-down.png when accordion is closed */
+
 .accordion-item:not(.open) .accordion-icon {
-    transform: rotate(180deg); /* Rotate down if it's chevron-down.png */
+    transform: rotate(180deg); 
 }
 
 
 
-/* --- Section 5: Bottom Banner Styles (Revised - preserving form/button styles) --- */
+
 .bottom-banner-section {
   background: linear-gradient(to bottom, #F8F8F8, #F0FFF0);
   padding: 80px 0 100px;
@@ -659,7 +657,7 @@ body {
 }
 
 .bottom-banner-section .bottom-banner-logo {
-    width: 60px; /* Match hero logo size */
+    width: 60px; 
     height: auto;
     margin-bottom: 10px;
 }
@@ -682,26 +680,24 @@ body {
     font-weight: 400;
 }
 
-/* Ensure the form and button within the bottom banner use the same waitlist-form and btn-primary styles */
 
 
-/* --- ANIMATION STYLES --- */
+/*ANIMATIONS*/
 
-/* Initial hidden state for all animated elements */
+
 .initial-hidden {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Hero Section Fade In and Bounce */
-/* Uses initial-hidden with fade-in-up class for an initial slight bounce */
+
 .fade-in-up.animated {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Delay classes for staggering (use on initial-hidden elements) */
+
 .delay-100 { transition-delay: 0.1s; }
 .delay-200 { transition-delay: 0.2s; }
 .delay-300 { transition-delay: 0.3s; }
@@ -709,11 +705,7 @@ body {
 .delay-500 { transition-delay: 0.5s; }
 
 
-/* Product Showcase & Bottom Banner Appear with Animation (fade in from bottom) */
-/* Reuses fade-in-up classes */
 
-
-/* Text and Image Section Slide In from Different Directions */
 .slide-in-left.initial-hidden {
     opacity: 0;
     transform: translateX(-50px);
@@ -735,7 +727,7 @@ body {
 }
 
 
-/* FAQ Cards Pop Up (fade in and slightly scale up) */
+
 .pop-up.initial-hidden {
     opacity: 0;
     transform: scale(0.95) translateY(20px);
@@ -747,7 +739,7 @@ body {
 }
 
 
-/* Closed Beta Card Pop In on Page Load */
+
 .pop-in-card.initial-hidden {
     opacity: 0;
     transform: scale(0.8);
@@ -757,7 +749,7 @@ body {
     transform: scale(1);
     transition: opacity 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* A "pop" effect */
 }
-/* Media Queries for Responsiveness (Basic for now) */
+
 @media (max-width: 1024px) {
     .hero-section h1 {
         font-size: 2.8em;
@@ -767,12 +759,12 @@ body {
     }
     @media (max-width: 768px) {
     .closed-beta-card {
-        width: 200px; /* Even smaller initial width for mobile */
+        width: 200px; 
         padding: 10px 15px;
     }
 
     .closed-beta-card.expanded {
-        width: 90%; /* Full width on mobile when expanded */
+        width: 90%; 
         max-width: 350px;
         right: 5%;
         bottom: 5%;
@@ -790,32 +782,32 @@ body {
 
 
     .navbar-nav {
-        gap: 20px; /* Reduce gap between nav items */
+        gap: 20px; 
     }
 }
 @media (max-width: 768px) {
     .text-image-section {
-        padding: 60px 0; /* Reduced padding for mobile */
+        padding: 60px 0; 
     }
 
     .text-image-section .content-wrapper {
-        flex-direction: column; /* Stack text and image vertically */
-        gap: 30px; /* Reduced gap between sections */
+        flex-direction: column; 
+        gap: 30px; 
     }
 
     .text-image-section .text-content,
     .text-image-section .image-content {
-        min-width: unset; /* Remove min-width constraint */
-        max-width: 100%; /* Full width on mobile */
-        text-align: center; /* Center text on mobile */
+        min-width: unset;
+        max-width: 100%; 
+        text-align: center; 
     }
 
     .text-image-section .text-content p {
-        font-size: 0.85em; /* Slightly smaller font for mobile */
+        font-size: 0.85em; 
     }
 
     .text-image-section .image-content {
-        height: 250px; /* Reduced height for mobile */
+        height: 250px; 
     }
 }
 
@@ -835,27 +827,27 @@ body {
 }
 @media (max-width: 480px) {
     .text-image-section .text-content p {
-        font-size: 0.8em; /* Even smaller font for very small screens */
+        font-size: 0.8em; 
     }
 
     .text-image-section .image-content {
-        height: 200px; /* Further reduced height for very small screens */
+        height: 200px; 
     }
 }
 
 @media (max-width: 768px) {
-    /* Mobile Background Image */
+    
     .hero-background {
         background: url('bg mobile.png') no-repeat center center/cover;
-        background-attachment: scroll; /* Change to scroll for mobile */
+        background-attachment: scroll; 
     }
 
-    /* Hide desktop-only elements */
+  
     .desktop-only {
         display: none !important;
     }
 
-    /* Show mobile-only elements */
+   
     .mobile-only {
         display: block !important;
     }
@@ -874,7 +866,7 @@ body {
         padding: 15px;
         width: 90%;
         max-width: 400px;
-        border-radius: 16px; /* Slightly larger radius for mobile */
+        border-radius: 16px; 
     }
     .waitlist-form .input-group {
         padding-left: 0;
@@ -886,7 +878,7 @@ body {
         gap: 10px;
     }
     .waitlist-form .mail-icon {
-        display: none; /* Hide icon on mobile for simplicity */
+        display: none; 
     }
     .waitlist-form input[type="email"] {
         min-width: unset;
@@ -902,14 +894,14 @@ body {
         border-radius: 100px;
     }
     .closed-beta-card {
-        width: 200px; /* Even smaller initial width for mobile */
+        width: 200px; 
         padding: 10px 15px;
-        position: fixed; /* Ensure fixed positioning */
+        position: fixed; 
         right: 16px;
         bottom: 16px;
     }
     .closed-beta-card.expanded {
-        width: 90%; /* Full width on mobile when expanded */
+        width: 90%; 
         max-width: 350px;
         right: 5%;
         bottom: 5%;
@@ -923,14 +915,14 @@ body {
     }
 
 
-    /* Mobile Drawer Menu Styles */
+    
     .mobile-drawer {
         position: fixed;
         top: 0;
-        right: -100%; /* Start off-screen */
+        right: -100%; 
         width: 100%;
         height: 100%;
-        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+        background-color: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         z-index: 1000;
@@ -939,11 +931,11 @@ body {
         align-items: center;
         padding: 20px;
         transition: right 0.4s ease-in-out;
-        overflow-y: auto; /* Allow scrolling if content is long */
+        overflow-y: auto; 
     }
 
     .mobile-drawer.open {
-        right: 0; /* Slide in */
+        right: 0; 
     }
 
     .drawer-header {
@@ -963,7 +955,7 @@ body {
     }
 
     .mobile-drawer .navbar-brand {
-        margin-left: 0; /* Reset margin for drawer logo */
+        margin-left: 0; 
     }
 
     .drawer-nav {
@@ -981,36 +973,36 @@ body {
         color: var(--primary-dark);
         font-weight: 600;
         padding: 10px 0;
-        display: block; /* Make links full width */
+        display: block; 
     }
 
     .mobile-drawer .btn-primary-nav {
-        width: 80%; /* Make button wider in drawer */
+        width: 80%; 
         max-width: 300px;
         padding: 15px 25px;
     }
 
 
-    /* Mobile Phone Mockups - Sticky Scroll Styles */
+    
     .mobile-phone-mockups-sticky {
         position: relative;
-        height: 150vh; /* This height creates scroll space for sticky effect */
-        margin-bottom: 50px; /* Space after sticky section */
+        height: 150vh; 
+        margin-bottom: 50px; 
     }
 
     .sticky-phone-wrapper {
         position: sticky;
-        top: 100px; /* Adjust sticky position from top */
+        top: 100px; 
         display: flex;
         justify-content: center;
         align-items: center;
-        height: calc(100vh - 200px); /* Adjust height for the sticky container */
-        overflow: hidden; /* Hide parts of images that are not active */
+        height: calc(100vh - 200px); 
+        overflow: hidden; 
     }
 
     .sticky-phone {
         position: absolute;
-        max-width: 80%; /* Adjust size of phones */
+        max-width: 80%; 
         height: auto;
         opacity: 0;
         transform: scale(0.8);
@@ -1022,17 +1014,16 @@ body {
         transform: scale(1);
     }
 
-    /* Hidden trigger elements for Intersection Observer */
+ 
     .phone-scroll-trigger {
         position: absolute;
         width: 100%;
-        height: 50vh; /* Each trigger covers a scroll portion */
-        /* background-color: rgba(255,0,0,0.1); /* For debugging */
-        z-index: -1; /* Ensure it doesn't block clicks */
+        height: 50vh; 
+        z-index: -1; 
     }
-    #phone-trigger-1 { top: 0vh; } /* First phone active at top of section */
-    #phone-trigger-2 { top: 50vh; } /* Second phone active when scrolled halfway */
-    #phone-trigger-3 { top: 100vh; } /* Third phone active when scrolled further */
+    #phone-trigger-1 { top: 0vh; } 
+    #phone-trigger-2 { top: 50vh; } 
+    #phone-trigger-3 { top: 100vh; } 
 
 
     .text-image-section .content-wrapper {
@@ -1064,59 +1055,59 @@ body {
     }
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 768px) {
     .faq-section {
-        padding: 40px 0; /* Reduced padding for mobile */
+        padding: 40px 0; 
     }
 
     .faq-container {
-        flex-direction: column; /* Stack columns vertically */
-        gap: 20px; /* Reduced gap between sections */
-        padding: 20px; /* Reduced padding for mobile */
-        border-radius: 15px; /* Slightly smaller radius */
+        flex-direction: column; 
+        gap: 20px; 
+        padding: 20px; 
+        border-radius: 15px; 
         text-align: center
     }
 
     .faq-left-column,
     .faq-accordion {
-        min-width: unset; /* Remove min-width constraint */
-        max-width: 100%; /* Full width on mobile */
-        text-align: center; /* Center align for mobile */
+        min-width: unset; 
+        max-width: 100%; 
+        text-align: center;
     }
 
     .faq-left-column h2 {
-        font-size: 1.8em; /* Smaller heading for mobile */
-        text-align: center; /* Center align for mobile */
+        font-size: 1.8em; 
+        text-align: center; 
         color: #F8FFE5;
     }
 
     .faq-left-column p {
-        font-size: 0.9em; /* Smaller text for mobile */
-        text-align: center; /* Center align for mobile */
+        font-size: 0.9em; 
+        text-align: center; 
         color: #F8FFE5;
     }
 
     .accordion-header h3 {
-        font-size: 0.95em; /* Smaller question font size */
+        font-size: 0.95em; 
     }
 
     .accordion-content p {
-        font-size: 0.85em; /* Smaller content font size */
+        font-size: 0.85em;
     }
 }
 
 @media (max-width: 480px) {
     .faq-left-column h2 {
-        font-size: 1.5em; /* Even smaller heading for very small screens */
+        font-size: 1.5em; 
     }
 
     .accordion-header h3 {
-        font-size: 0.9em; /* Even smaller question font size */
+        font-size: 0.9em; 
     }
 
     .accordion-content p {
-        font-size: 0.8em; /* Even smaller content font size */
+        font-size: 0.8em; 
     }
 }
 
@@ -1133,11 +1124,11 @@ body {
         gap: 10px;
     }
     .mobile-drawer .nav-item .nav-link {
-        font-size: 1.2em; /* Smaller font for very small screens */
+        font-size: 1.2em; 
     }
 }
 
-/* Helper classes for showing/hiding elements based on breakpoint */
+
 .desktop-only {
     display: block;
 }
