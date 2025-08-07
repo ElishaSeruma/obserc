@@ -27,31 +27,21 @@
 
         const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-        accordionHeaders.forEach(header => {
-            header.addEventListener('click', () => {
-                const accordionItem = header.parentElement;
-                const accordionContent = header.nextElementSibling;
-                const accordionIcon = header.querySelector('.accordion-icon');
+              accordionHeaders.forEach(header => {
+  header.addEventListener('click', () => {
+    const item = header.parentElement;
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('.accordion-icon');
 
-                const isOpen = accordionItem.classList.contains('open');
-
-                if (!isOpen) {
-                    accordionItem.classList.add('open');
-                    accordionContent.style.maxHeight = 'none';
-                    let contentHeight = accordionContent.scrollHeight;
-                    if (contentHeight === 0 || contentHeight < 20) {
-                        contentHeight = 1000;
-                    }
-                    accordionContent.style.maxHeight = '0px';
-                    void accordionContent.offsetWidth;
-                    accordionContent.style.maxHeight = contentHeight + 'px';
-                    accordionIcon.src = 'chevron-up.png';
-                } else {
-                    accordionItem.classList.remove('open');
-                    accordionContent.style.maxHeight = '0px';
-                    accordionIcon.src = 'chevron-down.png';
-                }
-            });
+    const isOpen = item.classList.toggle('open');
+    if (isOpen) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      icon.classList.add('rotated');
+    } else {
+      content.style.maxHeight = '0';
+      icon.classList.remove('rotated');
+    }
+  });
         });
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -138,3 +128,4 @@ window.addEventListener('load', handleResize);
                 document.body.style.overflow = ''; // Restore scroll
             }
         }
+
