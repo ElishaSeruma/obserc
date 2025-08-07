@@ -633,12 +633,12 @@ body {
 }
 
 .accordion-item.open .accordion-icon {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
 }
 
 
 .accordion-item:not(.open) .accordion-icon {
-    transform: rotate(180deg); 
+    transform: rotate(0deg); 
 }
 
 
@@ -1136,5 +1136,6 @@ body {
 .mobile-only {
     display: none;
 }
+
 
 
