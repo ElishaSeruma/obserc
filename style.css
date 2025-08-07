@@ -569,8 +569,9 @@ body {
 
 .faq-accordion {
     flex: 2; 
+    overflow: visible;
     min-width: 450px; 
-    max-width: 700px; 
+    max-width: none; 
 }
 
 .accordion-item {
@@ -1135,4 +1136,5 @@ body {
 .mobile-only {
     display: none;
 }
+
 
