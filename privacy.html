@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Obserc — Beta Privacy Policy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Minimal page-level style override so this page reads nicely even if style.css isn't loaded */
+    body { font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; color: #111; line-height: 1.6; background: #fff; padding: 40px 20px; }
+    .policy { max-width: 900px; margin: 0 auto; background: #fff; padding: 36px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+    h1 { font-size: 1.9rem; margin-bottom: 6px; color: var(--primary-dark, #0A3300); }
+    .updated { color:#666; margin-bottom: 24px; }
+    h2 { margin-top: 24px; color: #000; font-size: 1.15rem; }
+    p { margin: 12px 0; color: #333; }
+    ul { margin: 8px 0 16px 20px; }
+    code { background: #f4f4f6; padding: 2px 6px; border-radius: 6px; font-family: monospace; }
+    .note { background:#f8fff0; border-left: 4px solid var(--primary-green,#07D6A0); padding:12px; border-radius:6px; margin:12px 0; color:#0b3a2a; }
+    a { color: var(--primary-green,#07D6A0); text-decoration: none; }
+    .small { font-size:0.95rem; color:#666; margin-top:6px; }
+  </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="logo.png" alt="Obserc Logo">
+                Obserc
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <!--<li class="nav-item"><a href="#technology" class="nav-link">Technology</a></li>-->
+                <li class="nav-item"><a href="beta.html" class="nav-link">Beta</a></li>
+                <li class="nav-item"><a href="#docs" class="nav-link">Docs</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="btn-primary-nav">Get Early Access</button>
+        </div>
+    </nav>
+
+  <main class="policy" role="main">
+    <h1>Obserc — Beta Privacy Policy</h1>
+    <p class="updated">Last updated: <strong>August 8, 2025</strong></p>
+
+    <p>
+      Thank you for participating in the Obserc Beta Program. This page explains what data we collect during beta testing, how we use it, who we share it with, and how you can control or delete your data.
+      Obserc is an AI-powered personal safety system focused on detecting and responding to emotional, verbal, and physical danger signals. Because the beta includes experimental audio/video detection and device-level integration, we aim for clear, conservative handling of test data.
+    </p>
+
+    <h2>Quick summary</h2>
+    <p>
+      <strong>Short version:</strong> For Beta testing we collect only the data needed to evaluate and improve Obserc’s models and features — e.g., audio snippets, device telemetry, crash logs, and feedback you provide. We keep this data secure, use it only to improve Obserc, and do not sell it. You can opt out of beta testing at any time; contact privacy@obserc.com to request data deletion.
+    </p>
+
+    <h2>Scope & legal basis</h2>
+    <p>
+      This policy applies to data collected while you participate in Obserc’s Beta Program and while using Obserc beta builds and devices (collectively “Beta Services”). By accepting an Auth Code and installing a beta build you consent to the data practices described here. Where additional legal bases are required (e.g., in the EU), we rely on consent and legitimate interests for improving product safety and reliability.
+    </p>
+
+    <h2>What data we collect in beta</h2>
+    <p>We minimize collection wherever possible. Typical categories collected during Beta include:</p>
+    <ul>
+      <li><strong>Audio captures and derived signals:</strong> Short audio snippets or features extracted from audio (voice activity, tone, emotional-signal embeddings) used for detection research. Raw audio is kept only when needed and subject to stricter retention rules.</li>
+      <li><strong>Video / camera captures (if enabled):</strong> When testing device camera features, we may collect video frames or derived metadata (motion, object detections). Raw video is collected only if you explicitly enable a camera build and consent to camera testing.</li>
+      <li><strong>Device metadata:</strong> Device model, OS version, app version, battery level, sensor availability, and connectivity logs (no access to unrelated files).</li>
+      <li><strong>Events and labels:</strong> Timestamps, detection events, model confidence scores, and tester-provided labels (e.g., “false alarm”, “true alarm”).</li>
+      <li><strong>Performance & reliability logs:</strong> Crash reports, stack traces, CPU/memory usage, and network performance metrics.</li>
+      <li><strong>Feedback submissions:</strong> Anything you send through the built-in feedback form (text, screenshots, attachments, email if provided).</li>
+      <li><strong>Auth code usage:</strong> We log which Auth Codes are used and when to manage access and revoke codes where necessary.</li>
+    </ul>
+
+    <h2>What we do <em>not</em> collect</h2>
+    <ul>
+      <li>Your full contact list or arbitrary files stored on your device.</li>
+      <li>Any content beyond what the app explicitly captures for detection (we do not upload your photos, documents, or unrelated media).</li>
+      <li>Payment information (we do not process payments in Beta).</li>
+    </ul>
+
+    <h2>Why we collect this data</h2>
+    <p>We use Beta data for limited, explicit purposes:</p>
+    <ul>
+      <li>To evaluate and improve our detection models (accuracy, latency, false alarms).</li>
+      <li>To fix bugs, reduce crashes, and optimize battery and network usage.</li>
+      <li>To analyze feature adoption and user workflows during Beta.</li>
+      <li>To audit decisions during escalations and to improve safety outcomes.</li>
+    </ul>
+
+    <h2>How we process and protect your data</h2>
+    <p>
+      We implement technical and organizational measures to protect Beta data, including encryption in transit (TLS) and encryption at rest for sensitive data. Access to raw audio, video, and identifiable logs is restricted to a small group of authorized engineers and analysts who have signed confidentiality agreements.
+    </p>
+    <p class="note">
+      <strong>Note:</strong> For safety research we sometimes use human review of short segments for labeling and model improvement. All reviewers follow strict access, retention and redaction rules.
+    </p>
+
+    <h2>Anonymization & aggregation</h2>
+    <p>
+      When possible we store and analyze data as aggregated metrics and anonymized feature vectors rather than raw audio/video. Raw files are purged or truncated unless retaining them is necessary to debug a reported issue or investigate model failures.
+    </p>
+
+    <h2>Sharing & third parties</h2>
+    <p>
+      We do not sell or rent your personal data. We may share data only with:
+    </p>
+    <ul>
+      <li>Service providers who help host and operate Beta (storage, analytics, crash reporting). They process data on our behalf under contract and are required to protect it.</li>
+      <li>Trusted research partners under strict data-use agreements and only with explicit additional consent if required.</li>
+      <li>Law enforcement or authorities if required by law — we will notify you unless prohibited.</li>
+    </ul>
+
+    <h2>Feedback and support uploads</h2>
+    <p>
+      Anything you submit via the feedback form (text, attachments, screenshots) can be used by Obserc to diagnose issues and improve models. Do not include information you do not want to be used for research. If you send sensitive personal information by mistake, contact privacy@obserc.com to request redaction or deletion.
+    </p>
+
+    <h2>Data retention</h2>
+    <p>
+      Retention balances utility and safety with privacy:
+    </p>
+    <ul>
+      <li><strong>Evaluation & metrics:</strong> Aggregated metrics and non-identifying telemetry are retained for product analytics (typically 2–5 years).</li>
+      <li><strong>Raw audio/video & detailed logs:</strong> Retained only as long as necessary to investigate issues or improve models — usually no longer than 90–540 days unless you consent to a longer retention for debugging a specific problem.</li>
+      <li><strong>Feedback submissions:</strong> Retained until resolved plus 1 year for product improvement unless you request deletion.</li>
+    </ul>
+    <p class="small">If you need a specific retention exception (for debugging an important issue), contact privacy@obserc.com.</p>
+
+    <h2>Your choices & controls</h2>
+    <p>As a Beta tester you have these options:</p>
+    <ul>
+      <li><strong>Leave the Beta:</strong> Stop using Beta builds. Uninstall the beta app and revoke your Auth Code by emailing <a href="mailto:privacy@obserc.com">privacy@obserc.com</a>.</li>
+      <li><strong>Opt-out of specific data collection:</strong> Where feasible, toggle features off in the app (for example camera testing). Note some telemetry is required to diagnose critical failures.</li>
+      <li><strong>Access & deletion requests:</strong> Request a copy of the personal data we hold about your participation, or request deletion by emailing <a href="mailto:privacy@obserc.com">privacy@obserc.com</a>. We will respond in accordance with applicable law.</li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>
+      The Obserc Beta Program is not intended for children under 16. If you are a parent or guardian and believe your child under the age threshold has enrolled, contact us at <a href="mailto:privacy@obserc.com">privacy@obserc.com</a> and we will remove the child’s data promptly.
+    </p>
+
+    <h2>Security incidents</h2>
+    <p>
+      In the event of a data breach affecting Beta data, we will notify impacted testers and any required regulators as soon as possible and will provide remediation steps. We maintain an incident response process and perform regular security testing.
+    </p>
+
+    <h2>International data transfers</h2>
+    <p>
+      Obserc may store and process Beta data in locations outside your country. When we transfer data internationally, we rely on appropriate legal safeguards (e.g., standard contractual clauses) to protect your rights.
+    </p>
+
+    <h2>Legal & governing law</h2>
+    <p>
+      This Beta Privacy Policy is governed by the laws of the country in which Obserc is domiciled for operational purposes. Where local privacy laws provide greater protections, we will comply with them. If you have specific jurisdiction questions, contact <a href="mailto:privacy@obserc.com">privacy@obserc.com</a>.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      We may update this policy as the product and legal environment evolve. Material changes will be communicated on this page and via major beta communications. We recommend you check this page occasionally.
+    </p>
+
+    <h2>Contact & requests</h2>
+    <p>
+      For privacy questions, data access or deletion requests, or to revoke your Auth Code, contact:
+    </p>
+    <p><strong>Email:</strong> <a href="mailto:privacy@obserc.com">privacy@obserc.com</a></p>
+    <p class="small">Please include your tester Auth Code (if available) and the email you used for the Beta so we can locate your data quickly.</p>
+
+    <h2>Acknowledgement</h2>
+    <p>
+      By participating in the Obserc Beta Program you acknowledge that you have read and understood this policy and consent to the described data practices for the purposes of product testing and improvement.
+    </p>
+
+    <p style="margin-top:28px; font-size:0.95rem; color:#555;">
+      Thank you for helping build Obserc. Your care, time, and feedback make the product safer and more reliable for everyone.
+    </p>
+  </main>
+
+   
+
+</body>
+
+</html>
