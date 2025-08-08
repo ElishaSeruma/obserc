@@ -129,3 +129,20 @@ window.addEventListener('load', handleResize);
             }
         }
 
+
+ document.getElementById('newsletter-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.querySelector('input[name="newsletter-email"]').value;
+
+        // Basic client-side validation
+        if (!email) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        
+        console.log('Newsletter subscription:', { email });
+        alert('Thank you for subscribing to our newsletter!');
+        form.reset();
+    });
