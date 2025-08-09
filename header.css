@@ -1,0 +1,169 @@
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)); /* Light gradient for hero */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stars {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    box-shadow: 
+        2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+        22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+        38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+        53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
+        68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
+        83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
+        98vw 35vh 2px white, 5vw 60vh 1px white;
+    animation: twinkle 8s infinite linear;
+    z-index: 1; /* Below hero content */
+}
+
+.stars::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    box-shadow: 
+        8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
+        33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
+        57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
+        81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white;
+    animation: twinkle 6s infinite linear reverse;
+}
+
+.shooting-star {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, white, transparent);
+    animation: shoot 3s infinite ease-in;
+    z-index: 1; /* Below hero content */
+}
+
+.shooting-star:nth-child(1) {
+    top: 20%;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+    top: 35%;
+    left: -100px;
+    animation-delay: 1s;
+}
+
+.shooting-star:nth-child(3) {
+    top: 50%;
+    left: -100px;
+    animation-delay: 2s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0) rotate(25deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(120vw) translateY(50vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* Enhance hero content readability */
+.hero-content {
+    z-index: 2; /* Above stars */
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.8em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content .sub-headline {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: var(--text-dark);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.waitlist-form form {
+    z-index: 2; /* Above stars */
+}
+
+.waitlist-form input,
+.waitlist-form button {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .stars {
+        box-shadow: 
+            2vw 4vh 1.5px white, 10vw 6vh 1.5px white, 15vw 10vh 0.8px white,
+            22vw 15vh 0.8px white, 28vw 8vh 1.5px white, 32vw 20vh 0.8px white;
+    }
+    .stars::after {
+        box-shadow: 
+            8vw 8vh 1.5px white, 16vw 12vh 0.8px white, 24vw 18vh 1.5px white;
+    }
+    .shooting-star {
+        width: 80px; /* Smaller for tablet */
+    }
+    .shooting-star:nth-child(n) {
+        animation: shoot 2.5s infinite ease-in; /* Faster animation */
+    }
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+    .hero-content .sub-headline {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .stars {
+        box-shadow: 
+            2vw 3vh 1px white, 10vw 5vh 1px white, 15vw 8vh 0.5px white;
+    }
+    .stars::after {
+        box-shadow: 
+            8vw 6vh 1px white, 16vw 10vh 0.5px white;
+    }
+    .shooting-star {
+        width: 60px; /* Smaller for mobile */
+    }
+    .shooting-star:nth-child(n) {
+        animation: shoot 2s infinite ease-in; /* Even faster */
+    }
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+    .hero-content .sub-headline {
+        font-size: 0.9em;
+    }
+}
