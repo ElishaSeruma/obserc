@@ -267,12 +267,13 @@
         </div>
     </section>
 
-    <!-- Closed Beta Card -->
-    <div class="closed-beta-card">
-        <img src="close-icon.png" alt="Close" class="close-icon">
-        <h3><span class="green-dot"></span> OBSRC-Closed Beta</h3>
-        <p>We're opening a limited early access program for Obserc — join now to be one of the first to experience a smarter, calmer approach to personal safety.</p>
-    </div>
+    <section>
+        <div class="closed-beta-card initial-hidden pop-in-card">
+            <h3>OBSRC-Closed Beta <span class="green-dot"></span></h3>
+            <p>We're opening a limited early access program for Obserc — our closed beta is your chance to be one of the first to experience a smarter, calmer approach to personal safety. As a beta tester, you'll get hands-on access to the app, try out key features before launch, and help shape how Obserc supports people in real moments. It's private, secure, and built around your feedback. Spots are limited — we'd love to have you with us.</p>
+            <img src="close-icon.png" alt="Close" loading="lazy" class="close-icon" onclick="this.parentElement.classList.toggle('expanded')">
+        </div>
+    </section>
 
     <script src="scripts.js"></script>
 </body>
