@@ -19,13 +19,27 @@
                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="beta.html" class="nav-link active">Beta</a></li>
-                <li class="nav-item"><a href="404.html" class="nav-link">Docs</a></li>
+                <!--<li class="nav-item"><a href="404.html" class="nav-link">Docs</a></li>-->
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <button class="btn-primary-nav">Get Early Access</button>
         </div>
     </nav>
+    <!-- Beta Side Menu Toggle Button -->
+<button id="betaMenuToggle" class="beta-menu-toggle">☰ Beta Menu</button>
 
+<!-- Beta Side Menu -->
+<aside class="beta-sidebar-overlay" id="betaSidebar">
+    <button class="beta-menu-close" id="betaMenuClose">✕</button>
+    <ul>
+        <li><a href="beta.html" class="active">Overview</a></li>
+        <li><a href="beta-download.html">Download</a></li>
+        <li><a href="beta-release-notes.html">Release Notes</a></li>
+        <li><a href="beta-phases.html">Phase Details</a></li>
+        <li><a href="beta-feedback.html">Feedback</a></li>
+    </ul>
+</aside> 
+    
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
@@ -154,7 +168,7 @@
                 <div style="flex: 1; min-width: 280px; text-align: center;">
                     <img src="graph-2.gif" alt="Detection Speed" style="max-width: 100%; border-radius: 12px;">
                     <h3>Detection Speed</h3>
-                    <p>From trigger to alert in under 5 seconds — twice as fast as leading apps.</p>
+                    <p>From trigger to alert in under 2 seconds — twice as fast as leading apps.</p>
                 </div>
                 <div style="flex: 1; min-width: 280px; text-align: center;">
                     <img src="graph-3.gif" alt="False Alarm Rate" style="max-width: 100%; border-radius: 12px;">
@@ -189,22 +203,22 @@
             <h2 style="font-size: 2em; color: #0A3300; font-weight: 600; margin-bottom: 30px;">Tester Stories</h2>
             <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
                 <div style="flex: 1; min-width: 250px; background-color: #F8F8F8; border: 1px solid #E0E0E0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); text-align: center;">
-                    <blockquote style="font-size: 1em; color: #333; font-style: italic; margin-bottom: 15px;">
+                    <blockquote style="font-size: 1em; color: #333; margin-bottom: 15px;">
                         "Even in testing, Obserc feels like a real partner in my safety. The alert speed is incredible."
                     </blockquote>
-                    <p style="font-size: 0.9em; color: #07D6A0; font-weight: 600;">— Beta Tester, Uganda</p>
+                    <p style="font-size: 0.9em; color: #07D6A0; font-weight: 600;">— Beta Tester 1</p>
                 </div>
                 <div style="flex: 1; min-width: 250px; background-color: #F8F8F8; border: 1px solid #E0E0E0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); text-align: center;">
-                    <blockquote style="font-size: 1em; color: #333; font-style: italic; margin-bottom: 15px;">
+                    <blockquote style="font-size: 1em; color: #333; margin-bottom: 15px;">
                         "I’ve tried other safety apps, but Obserc’s Circle feature is a game changer. It feels personal, not just technical."
                     </blockquote>
-                    <p style="font-size: 0.9em; color: #07D6A0; font-weight: 600;">— Beta Tester, Canada</p>
+                    <p style="font-size: 0.9em; color: #07D6A0; font-weight: 600;">— Beta Tester 2</p>
                 </div>
                 <div style="flex: 1; min-width: 250px; background-color: #F8F8F8; border: 1px solid #E0E0E0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); text-align: center;">
-                    <blockquote style="font-size: 1em; color: #333; font-style: italic; margin-bottom: 15px;">
+                    <blockquote style="font-size: 1em; color: #333;  margin-bottom: 15px;">
                         "The false alarm rate is so low I trust it to run all day in the background without worrying."
                     </blockquote>
-                    <p style="font-size: 0.9em; color: #07D6A0; font-weight: 600;">— Beta Tester, UK</p>
+                    <p style="font-size: 0.9em; color: #07D6A0; font-weight: 600;">— Beta Tester 3</p>
                 </div>
             </div>
         </div>
@@ -267,13 +281,14 @@
         </div>
     </section>
 
-    <section>
-        <div class="closed-beta-card initial-hidden pop-in-card">
-            <h3>OBSRC-Closed Beta <span class="green-dot"></span></h3>
-            <p>We're opening a limited early access program for Obserc — our closed beta is your chance to be one of the first to experience a smarter, calmer approach to personal safety. As a beta tester, you'll get hands-on access to the app, try out key features before launch, and help shape how Obserc supports people in real moments. It's private, secure, and built around your feedback. Spots are limited — we'd love to have you with us.</p>
-            <img src="close-icon.png" alt="Close" loading="lazy" class="close-icon" onclick="this.parentElement.classList.toggle('expanded')">
-        </div>
-    </section>
+
+
+    <!-- Closed Beta Card -->
+    <div class="closed-beta-card">
+        <img src="close-icon.png" alt="Close" class="close-icon">
+        <h3>Obserc Release 1(OBSRC-HL-001)</h3>
+        <p>We're opening a limited early access program for Obserc — join now to be one of the first to experience a smarter, calmer approach to personal safety.</p>
+    </div>
 
     <script src="scripts.js"></script>
 </body>
