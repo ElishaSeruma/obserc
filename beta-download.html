@@ -56,18 +56,42 @@
             margin-top: 20px;
             display: inline-block;
         }
-        @media (max-width: 768px) {
-            table {
-                font-size: 0.85em;
-            }
-            th, td {
-                padding: 10px;
-            }
-            .download-section {
-                padding: 20px;
-            }
-        }
-    </style>
+        /* Mobile Card Layout */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+    thead {
+        display: none;
+    }
+    tr {
+        background-color: #fff;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        overflow: hidden;
+    }
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+        border-bottom: 1px solid var(--border-color);
+        font-size: 0.85em;
+    }
+    td:last-child {
+        border-bottom: none;
+    }
+    td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--primary-dark);
+        flex-basis: 40%;
+        text-align: left;
+    }
+}
+</style>
+
 </head>
 <body>
      <!-- Navbar -->
@@ -144,44 +168,51 @@
         <section class="download-section">
             <div class="container">
                 <h2>All Available Builds</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Version</th>
-                            <th>Release Date</th>
-                            <th>Type</th>
-                            <th>Size</th>
-                            <th>Status</th>
-                            <th>Download</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>v0.8.2</td>
-                            <td>Aug 10, 2025</td>
-                            <td>UI Build</td>
-                            <td>62 MB</td>
-                            <td>Recommended</td>
-                            <td><a href="/downloads/OBSRC-UI-0.8.2.apk" download class="btn-secondary-nav">Download</a></td>
-                        </tr>
-                        <tr>
-                            <td>v0.7.9</td>
-                            <td>Aug 02, 2025</td>
-                            <td>Headless</td>
-                            <td>45 MB</td>
-                            <td>Stable</td>
-                            <td><a href="/downloads/OBSRC-HL-0.7.9.apk" download class="btn-secondary-nav">Download</a></td>
-                        </tr>
-                        <tr>
-                            <td>v0.7.3</td>
-                            <td>Jul 15, 2025</td>
-                            <td>Headless</td>
-                            <td>44 MB</td>
-                            <td>Archived</td>
-                            <td><a href="/downloads/OBSRC-HL-0.7.3.apk" download class="btn-secondary-nav">Download</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+  <table>
+    <thead>
+        <tr>
+            <th>Version</th>
+            <th>Release Date</th>
+            <th>Type</th>
+            <th>Size</th>
+            <th>Status</th>
+            <th>Download</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-label="Version">v0.8.2</td>
+            <td data-label="Release Date">Aug 10, 2025</td>
+            <td data-label="Type">UI Build</td>
+            <td data-label="Size">62 MB</td>
+            <td data-label="Status">Recommended</td>
+            <td data-label="Download">
+                <a href="/downloads/OBSRC-UI-0.8.2.apk" download class="btn-secondary-nav">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <td data-label="Version">v0.7.9</td>
+            <td data-label="Release Date">Aug 02, 2025</td>
+            <td data-label="Type">Headless</td>
+            <td data-label="Size">45 MB</td>
+            <td data-label="Status">Stable</td>
+            <td data-label="Download">
+                <a href="/downloads/OBSRC-HL-0.7.9.apk" download class="btn-secondary-nav">Download</a>
+            </td>
+        </tr>
+        <tr>
+            <td data-label="Version">v0.7.3</td>
+            <td data-label="Release Date">Jul 15, 2025</td>
+            <td data-label="Type">Headless</td>
+            <td data-label="Size">44 MB</td>
+            <td data-label="Status">Archived</td>
+            <td data-label="Download">
+                <a href="/downloads/OBSRC-HL-0.7.3.apk" download class="btn-secondary-nav">Download</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
             </div>
         </section>
 
