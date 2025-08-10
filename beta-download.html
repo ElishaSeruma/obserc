@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Obserc Beta Builds</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Using Manrope font as defined in style.css -->
+    <style>
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background-color: var(--primary-green);
+            color: white;
+            font-weight: 600;
+        }
+        td {
+            font-size: 0.9em;
+            color: var(--text-dark);
+        }
+        tr:hover {
+            background-color: rgba(7, 214, 160, 0.1); /* Subtle hover effect */
+        }
+        .download-section {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: var(--form-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .download-section h2 {
+            font-size: 2em;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+        .download-section ul, .download-section ol {
+            margin-left: 20px;
+            font-size: 0.95em;
+            color: var(--text-dark);
+        }
+        .download-section .btn-primary-nav {
+            margin-top: 20px;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.85em;
+            }
+            th, td {
+                padding: 10px;
+            }
+            .download-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="logo.png" alt="Obserc Logo">
+                Obserc
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="beta.html" class="nav-link active">Beta</a></li>
+                <!--<li class="nav-item"><a href="#docs" class="nav-link">Docs</a></li>-->
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="btn-primary-nav">Get Early Access</button>
+        </div>
+    </nav>
+    <!-- Beta Side Menu Toggle Button -->
+<button id="betaMenuToggle" class="beta-menu-toggle">☰ Beta Menu</button>
+
+<!-- Beta Side Menu -->
+<aside class="beta-sidebar-overlay" id="betaSidebar">
+    <button class="beta-menu-close" id="betaMenuClose">✕</button>
+    <ul>
+        <li><a href="beta.html">Overview</a></li>
+        <li><a href="beta-download.html" class="active">Download</a></li>
+        <li><a href="beta-release-notes.html">Release Notes</a></li>
+        <li><a href="beta-phases.html">Phase Details</a></li>
+        <li><a href="beta-feedback.html">Feedback</a></li>
+    </ul>
+</aside> 
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-background"></div>
+            <div class="container">
+                <h1>Download Obserc Beta Builds</h1>
+                <p class="sub-headline">Welcome to the download hub for the Obserc Beta Program. Access the latest builds to test headless detection accuracy or explore our evolving UI. All builds are pre-release and may include experimental features.</p>
+            </div>
+        </section>
+
+        <!-- Tester Note Section -->
+        <section class="download-section">
+            <div class="container">
+                <h2>Tester Note</h2>
+                <p>Before downloading, ensure you are signed in with your beta tester account. Some builds require a device running Android 10 or higher and permissions for microphone, camera, and background processes. Check your device compatibility and review the <a href="404.html">system requirements</a>.</p>
+            </div>
+        </section>
+
+        <!-- Latest Recommended Build Section -->
+        <section class="download-section">
+            <div class="container">
+                <h2>Latest Recommended Build</h2>
+                <p><strong>Version:</strong> v0.8.2 Beta (UI Preview)</p>
+                <p><strong>Release Date:</strong> August 10, 2025</p>
+                <p><strong>Size:</strong> 62 MB</p>
+                <p><strong>Type:</strong> UI Build</p>
+                <p><strong>MD5 Checksum:</strong> 47a8e92c10f4b87a2bcd9...</p>
+                <a href="/downloads/OBSRC-UI-0.8.2.apk" class="btn-primary-nav" download>Download Now</a>
+                <h3>Quick Notes:</h3>
+                <ul>
+                    <li>Includes Circle management from the main dashboard.</li>
+                    <li>Adds manual escalation button for testers.</li>
+                    <li>Optimized detection speed by 18% over v0.7.9.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- All Available Builds Table Section -->
+        <section class="download-section">
+            <div class="container">
+                <h2>All Available Builds</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Version</th>
+                            <th>Release Date</th>
+                            <th>Type</th>
+                            <th>Size</th>
+                            <th>Status</th>
+                            <th>Download</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>v0.8.2</td>
+                            <td>Aug 10, 2025</td>
+                            <td>UI Build</td>
+                            <td>62 MB</td>
+                            <td>Recommended</td>
+                            <td><a href="/downloads/OBSRC-UI-0.8.2.apk" download class="btn-secondary-nav">Download</a></td>
+                        </tr>
+                        <tr>
+                            <td>v0.7.9</td>
+                            <td>Aug 02, 2025</td>
+                            <td>Headless</td>
+                            <td>45 MB</td>
+                            <td>Stable</td>
+                            <td><a href="/downloads/OBSRC-HL-0.7.9.apk" download class="btn-secondary-nav">Download</a></td>
+                        </tr>
+                        <tr>
+                            <td>v0.7.3</td>
+                            <td>Jul 15, 2025</td>
+                            <td>Headless</td>
+                            <td>44 MB</td>
+                            <td>Archived</td>
+                            <td><a href="/downloads/OBSRC-HL-0.7.3.apk" download class="btn-secondary-nav">Download</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Installation Instructions Section -->
+        <section class="download-section">
+            <div class="container">
+                <h2>Installation Instructions</h2>
+                <ol>
+                    <li>Download the .apk file to your Android device.</li>
+                    <li>Enable "Install from Unknown Sources" in your Android settings (Settings > Security).</li>
+                    <li>Install the .apk and grant requested permissions (microphone, camera, notifications).</li>
+                    <li>Log in with your beta tester credentials provided via email.</li>
+                    <li>Start using Obserc in real-world scenarios and share feedback.</li>
+                </ol>
+                <p>For detailed setup guides, visit our <a href="/docs">Documentation</a>.</p>
+            </div>
+        </section>
+
+        <!-- Disclaimer Section -->
+        <section class="download-section">
+            <div class="container">
+                <h2>Disclaimer</h2>
+                <p>Beta builds are for testing purposes only and should not be relied upon in emergency situations. Always maintain an alternate safety plan. Review our <a href="/beta-privacy">Beta Privacy Policy</a> for data handling details.</p>
+            </div>
+        </section>
+    </main>
+<!-- Footer -->
+    <footer style="background-color: #0A3300; color: #F8F8F8; padding: 100px 0 60px; font-family: 'Manrope', sans-serif;">
+        <div class="footer-wave">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
+            <!-- Company Info -->
+            <div style="flex: 1; min-width: 250px;">
+                
+
+                <a href="https://obserc.com" style="color: #07D6A0; text-decoration: none; margin: 0 15px;" target="_blank" rel="noopener noreferrer">
+                    <img src="logo.png" alt="Obserc" style="width: 96px; height: 96px; vertical-align: left;">
+                </a>
+
+                    
+                <br><br>
+                <p style="font-size: 0.9em; line-height: 1.6;">
+                    Transforming personal safety with AI-powered technology, Obserc empowers individuals and communities to live without fear.
+                </p>
+
+            </div>
+            <!-- Navigation Links -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 15px;">Quick Links</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="index.html" style="color: #07D6A0; text-decoration: none; font-size: 0.9em;">Home</a></li>
+                    <li style="margin-bottom: 10px;"><a href="about.html" style="color: #07D6A0; text-decoration: none; font-size: 0.9em;">About</a></li>
+                    <li style="margin-bottom: 10px;"><a href="technology.html" style="color: #07D6A0; text-decoration: none; font-size: 0.9em;">Technology</a></li>
+                    <li style="margin-bottom: 10px;"><a href="beta.html" style="color: #07D6A0; text-decoration: none; font-size: 0.9em;">Beta</a></li>
+                    <li style="margin-bottom: 10px;"><a href="docs.html" style="color: #07D6A0; text-decoration: none; font-size: 0.9em;">Docs</a></li>
+                    <li style="margin-bottom: 10px;"><a href="contact.html" style="color: #07D6A0; text-decoration: none; font-size: 0.9em;">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 15px;">Contact Us</h3>
+                <p style="font-size: 0.9em; margin-bottom: 10px;">
+                    <strong>Email:</strong> <a href="mailto:contact@obserc.com" style="color: #07D6A0; text-decoration: none;">contact@obserc.com</a>
+                </p>
+                <p style="font-size: 0.9em; margin-bottom: 10px;">
+                    <strong>Phone:</strong> <a href="tel:+353838521240" style="color: #07D6A0; text-decoration: none;">+353 838 521 240</a>
+                </p>
+                <p style="font-size: 0.9em; margin-bottom: 10px;">
+                    <strong>Address:</strong>Tralee, Ireland
+                </p>
+            </div>
+            <!-- Newsletter Signup -->
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 15px;">Stay Updated</h3>
+                <p style="font-size: 0.9em; margin-bottom: 15px;">Subscribe to our newsletter for the latest updates and insights.</p>
+                <form id="newsletter-form" style="display: flex; gap: 10px; background-color: #F8FFE5; padding: 10px; border-radius: 8px;">
+                    <input type="email" name="newsletter-email" required placeholder="Enter your email" style="flex: 1; padding: 10px; border: 1px solid #E0E0E0; border-radius: 8px; font-size: 0.9em; color: #333; background-color: #fff; outline: none;">
+                    <button type="submit" style="background: linear-gradient(to right, #07D6A0, #07D6A0); color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 0.9em; font-weight: 400; cursor: pointer; transition: filter 0.3s ease;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <!-- Social Media and Legal -->
+        <div style="max-width: 1200px; margin: 40px auto 0; padding: 20px 20px; border-top: 1px solid rgba(255, 255, 255, 0.2); text-align: center;">
+            <div style="margin-bottom: 20px;">
+                <a href="https://twitter.com/obserc" style="color: #07D6A0; text-decoration: none; margin: 0 15px;" target="_blank" rel="noopener noreferrer">
+                    <img src="twitter.png" alt="Twitter" style="width: 24px; height: 24px; vertical-align: middle;">
+                </a>
+                <a href="https://linkedin.com/company/obserc" style="color: #07D6A0; text-decoration: none; margin: 0 15px;" target="_blank" rel="noopener noreferrer">
+                    <img src="linkedin.png" alt="LinkedIn" style="width: 24px; height: 24px; vertical-align: middle;">
+                </a>
+                <a href="https://facebook.com/obserc" style="color: #07D6A0; text-decoration: none; margin: 0 15px;" target="_blank" rel="noopener noreferrer">
+                    <img src="facebook.png" alt="Facebook" style="width: 24px; height: 24px; vertical-align: middle;">
+                </a>
+            </div>
+            <p style="font-size: 0.9em; margin-bottom: 10px;">&copy; 2025 Obserc. All rights reserved.</p>
+            <p style="font-size: 0.9em;">
+                <a href="privacy.html" style="color: #07D6A0; text-decoration: none; margin: 0 10px;">Privacy Policy</a> |
+                <a href="terms.html" style="color: #07D6A0; text-decoration: none; margin: 0 10px;">Terms of Service</a> |
+                <a href="cookies.html" style="color: #07D6A0; text-decoration: none; margin: 0 10px;">Cookie Policy</a>
+            </p>
+        </div>
+    </footer>
+
+<script src="scripts.js"></script>
+
+</html>

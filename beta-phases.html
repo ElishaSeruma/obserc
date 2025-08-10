@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obserc Beta Phases & Roadmap</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Additional styles for phase details sections */
+        .phase-section {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: var(--form-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .phase-section h2 {
+            font-size: 2em;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+        .phase-section h3 {
+            font-size: 1.5em;
+            color: var(--primary-dark);
+            margin: 20px 0 10px;
+        }
+        .phase-section p {
+            font-size: 0.95em;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .phase-section ul {
+            margin-left: 20px;
+            font-size: 0.95em;
+            color: var(--text-dark);
+        }
+        .phase-section .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        .phase-section .status.completed {
+            background-color: var(--primary-green);
+            color: white;
+        }
+        .phase-section .status.in-progress {
+            background-color: #FFD700;
+            color: var(--text-dark);
+        }
+        .phase-section .status.planned {
+            background-color: var(--border-color);
+            color: var(--text-dark);
+        }
+        .milestones {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+        }
+        .milestones h3 {
+            font-size: 1.5em;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        .milestones ul {
+            margin-left: 20px;
+            font-size: 0.95em;
+            color: var(--text-dark);
+        }
+        @media (max-width: 768px) {
+            .phase-section {
+                padding: 20px;
+            }
+            .phase-section h2 {
+                font-size: 1.8em;
+            }
+            .phase-section h3 {
+                font-size: 1.3em;
+            }
+            .phase-section p, .phase-section ul {
+                font-size: 0.85em;
+            }
+            .milestones {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="logo.png" alt="Obserc Logo">
+                Obserc
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="beta.html" class="nav-link active">Beta</a></li>
+                <!--<li class="nav-item"><a href="#docs" class="nav-link">Docs</a></li>-->
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="btn-primary-nav">Get Early Access</button>
+        </div>
+    </nav>
+    <!-- Beta Side Menu Toggle Button -->
+<button id="betaMenuToggle" class="beta-menu-toggle">☰ Beta Menu</button>
+
+<!-- Beta Side Menu -->
+<aside class="beta-sidebar-overlay" id="betaSidebar">
+    <button class="beta-menu-close" id="betaMenuClose">✕</button>
+    <ul>
+        <li><a href="beta.html">Overview</a></li>
+        <li><a href="beta-download.html">Download</a></li>
+        <li><a href="beta-release-notes.html">Release Notes</a></li>
+        <li><a href="beta-phases.html"  class="active">Phase Details</a></li>
+        <li><a href="beta-feedback.html">Feedback</a></li>
+    </ul>
+</aside> 
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-background"></div>
+            <div class="container">
+                <h1>Obserc Beta Phases & Roadmap</h1>
+                <p class="sub-headline">Our beta program is designed to iterate quickly but deliberately. Below is the breakdown of each phase and what it focuses on, guiding us toward a robust personal safety companion.</p>
+            </div>
+        </section>
+
+        <!-- Phase 1: Headless Detection -->
+        <section class="phase-section">
+            <div class="container">
+                <h2>Phase 1: Headless Detection <span class="status completed">Completed</span></h2>
+                <p><strong>Goal:</strong> Validate AI detection accuracy without UI complexity.</p>
+                <p><strong>Key Tests:</strong></p>
+                <ul>
+                    <li>Emotional, verbal, and physical violence detection rates.</li>
+                </ul>
+                <p><strong>Outcome:</strong> Achieved 88% detection accuracy in varied real-world environments.</p>
+                <p><strong>Completion Date:</strong> July 2025</p>
+                <a href="/beta-download" class="btn-secondary-nav">View Headless Builds</a>
+            </div>
+        </section>
+
+        <!-- Phase 2: UI Preview -->
+        <section class="phase-section">
+            <div class="container">
+                <h2>Phase 2: UI Preview <span class="status in-progress">In Progress</span></h2>
+                <p><strong>Goal:</strong> Test user interaction flows, Circle features, and manual escalation tools.</p>
+                <p><strong>Current Focus:</strong></p>
+                <ul>
+                    <li>Streamlining navigation for intuitive use.</li>
+                    <li>Refining feedback animations for real-time alerts.</li>
+                </ul>
+                <p><strong>Estimated Completion:</strong> September 2025</p>
+                <a href="/beta-download" class="btn-secondary-nav">Try UI Preview Builds</a>
+            </div>
+        </section>
+
+        <!-- Phase 3: Full UI & Analytics -->
+        <section class="phase-section">
+            <div class="container">
+                <h2>Phase 3: Full UI & Analytics <span class="status planned">Planned</span></h2>
+                <p><strong>Goal:</strong> Integrate full design language, personal safety analytics, and onboarding flow.</p>
+                <p><strong>Extras:</strong></p>
+                <ul>
+                    <li>Data visualization for safety trends.</li>
+                    <li>AI confidence indicators for detection reliability.</li>
+                </ul>
+                <p><strong>Target:</strong> Late 2025</p>
+            </div>
+        </section>
+
+        <!-- Phase 4: Public Release Candidate -->
+        <section class="phase-section">
+            <div class="container">
+                <h2>Phase 4: Public Release Candidate <span class="status planned">Planned</span></h2>
+                <p><strong>Goal:</strong> Ensure stability, scalability, and pre-launch marketing readiness.</p>
+                <p><strong>Target:</strong> Early 2026</p>
+            </div>
+        </section>
+
+        <!-- Upcoming Milestones -->
+        <section class="phase-section">
+            <div class="container">
+                <div class="milestones">
+                    <h3>Upcoming Milestones</h3>
+                    <ul>
+                        <li>Private tester summit for UI review – September 2025</li>
+                        <li>Closed-group trial for analytics features – November 2025</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<!-- Footer -->
+    <footer style="background-color: #0A3300; color: #F8F8F8; padding: 100px 0 60px; font-family: 'Manrope', sans-serif;">
+        <div class="footer-wave">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
+            <!-- Company Info -->
+            <div style="flex: 1; min-width: 250px;">
+                
+
+                <a href="https://obserc.com" style="color: #07D6A0; text-decoration: none; margin: 0 15px;" target="_blank" rel="noopener noreferrer">
+                    <img src="logo.png" alt="Obserc" style="width: 96px; height: 96px; vertical-align: left;">
+                </a>
+
+                    
+                <br><br>
+                <p style="font-size: 0.9em; line-height: 1.6;">
+                    Transforming personal safety with AI-powered technology, Obserc empowers individuals and communities to live without fear.
+                </p>
+
+            </div>
+            <!-- Navigation Links -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 15px;">Quick Links</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="index.html" style="color: #07D6A0; text-decoration: none; font-size: 0.9em;">Home</a></li>
+                    <li style="margin-bottom: 10px;"><a href="about.html" style="color: #07D6A0; text-decoration: none; font-size: 0.9em;">About</a></li>
+                    <li style="margin-bottom: 10px;"><a href="technology.html" style="color: #07D6A0; text-decoration: none; font-size: 0.9em;">Technology</a></li>
+                    <li style="margin-bottom: 10px;"><a href="beta.html" style="color: #07D6A0; text-decoration: none; font-size: 0.9em;">Beta</a></li>
+                    <li style="margin-bottom: 10px;"><a href="docs.html" style="color: #07D6A0; text-decoration: none; font-size: 0.9em;">Docs</a></li>
+                    <li style="margin-bottom: 10px;"><a href="contact.html" style="color: #07D6A0; text-decoration: none; font-size: 0.9em;">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 15px;">Contact Us</h3>
+                <p style="font-size: 0.9em; margin-bottom: 10px;">
+                    <strong>Email:</strong> <a href="mailto:contact@obserc.com" style="color: #07D6A0; text-decoration: none;">contact@obserc.com</a>
+                </p>
+                <p style="font-size: 0.9em; margin-bottom: 10px;">
+                    <strong>Phone:</strong> <a href="tel:+353838521240" style="color: #07D6A0; text-decoration: none;">+353 838 521 240</a>
+                </p>
+                <p style="font-size: 0.9em; margin-bottom: 10px;">
+                    <strong>Address:</strong>Tralee, Ireland
+                </p>
+            </div>
+            <!-- Newsletter Signup -->
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="font-size: 1.5em; font-weight: 600; margin-bottom: 15px;">Stay Updated</h3>
+                <p style="font-size: 0.9em; margin-bottom: 15px;">Subscribe to our newsletter for the latest updates and insights.</p>
+                <form id="newsletter-form" style="display: flex; gap: 10px; background-color: #F8FFE5; padding: 10px; border-radius: 8px;">
+                    <input type="email" name="newsletter-email" required placeholder="Enter your email" style="flex: 1; padding: 10px; border: 1px solid #E0E0E0; border-radius: 8px; font-size: 0.9em; color: #333; background-color: #fff; outline: none;">
+                    <button type="submit" style="background: linear-gradient(to right, #07D6A0, #07D6A0); color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 0.9em; font-weight: 400; cursor: pointer; transition: filter 0.3s ease;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <!-- Social Media and Legal -->
+        <div style="max-width: 1200px; margin: 40px auto 0; padding: 20px 20px; border-top: 1px solid rgba(255, 255, 255, 0.2); text-align: center;">
+            <div style="margin-bottom: 20px;">
+                <a href="https://twitter.com/obserc" style="color: #07D6A0; text-decoration: none; margin: 0 15px;" target="_blank" rel="noopener noreferrer">
+                    <img src="twitter.png" alt="Twitter" style="width: 24px; height: 24px; vertical-align: middle;">
+                </a>
+                <a href="https://linkedin.com/company/obserc" style="color: #07D6A0; text-decoration: none; margin: 0 15px;" target="_blank" rel="noopener noreferrer">
+                    <img src="linkedin.png" alt="LinkedIn" style="width: 24px; height: 24px; vertical-align: middle;">
+                </a>
+                <a href="https://facebook.com/obserc" style="color: #07D6A0; text-decoration: none; margin: 0 15px;" target="_blank" rel="noopener noreferrer">
+                    <img src="facebook.png" alt="Facebook" style="width: 24px; height: 24px; vertical-align: middle;">
+                </a>
+            </div>
+            <p style="font-size: 0.9em; margin-bottom: 10px;">&copy; 2025 Obserc. All rights reserved.</p>
+            <p style="font-size: 0.9em;">
+                <a href="privacy.html" style="color: #07D6A0; text-decoration: none; margin: 0 10px;">Privacy Policy</a> |
+                <a href="terms.html" style="color: #07D6A0; text-decoration: none; margin: 0 10px;">Terms of Service</a> |
+                <a href="cookies.html" style="color: #07D6A0; text-decoration: none; margin: 0 10px;">Cookie Policy</a>
+            </p>
+        </div>
+    </footer>
+
+<script src="scripts.js"></script>
+
+</html>
