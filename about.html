@@ -203,7 +203,17 @@
         </div>
     </footer>
 
-<script src="scripts.js"></script>
+<script>
+    document.querySelectorAll('.bento-card').forEach(card => {
+        card.addEventListener('click', () => {
+            // Remove active class from all cards
+            document.querySelectorAll('.bento-card').forEach(c => c.classList.remove('active'));
+            // Add active class to clicked card
+            card.classList.add('active');
+        });
+    });
+</script>
 </body>
 </html>
+
 
