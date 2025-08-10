@@ -538,6 +538,7 @@ body {
     .beta-sidebar-overlay {
         width: 80%;
         max-width: 300px;
+        left: -100%;
     }
 }
 
@@ -1619,6 +1620,7 @@ footer .container {
 .mobile-only {
     display: none;
 }
+
 
 
 
