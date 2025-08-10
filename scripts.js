@@ -116,6 +116,22 @@
     }
 }
 
+document.getElementById('betaMenuToggle').addEventListener('click', function() {
+    document.getElementById('betaSidebar').classList.add('open');
+});
+document.getElementById('betaMenuClose').addEventListener('click', function() {
+    document.getElementById('betaSidebar').classList.remove('open');
+});
+
+document.querySelectorAll('.bento-card').forEach(card => {
+        card.addEventListener('click', () => {
+            // Remove active class from all cards
+            document.querySelectorAll('.bento-card').forEach(c => c.classList.remove('active'));
+            // Add active class to clicked card
+            card.classList.add('active');
+        });
+    });
+
 window.addEventListener('resize', handleResize);
 window.addEventListener('load', handleResize);
 
@@ -129,20 +145,3 @@ window.addEventListener('load', handleResize);
             }
         }
 
-
- document.getElementById('newsletter-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const form = event.target;
-        const email = form.querySelector('input[name="newsletter-email"]').value;
-
-        // Basic client-side validation
-        if (!email) {
-            alert('Please enter a valid email address.');
-            return;
-        }
-
-        
-        console.log('Newsletter subscription:', { email });
-        alert('Thank you for subscribing to our newsletter!');
-        form.reset();
-    });
