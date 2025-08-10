@@ -6,6 +6,72 @@
     <title>Obserc - Beta Program</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
+
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+th {
+    background-color: var(--primary-green);
+    color: white;
+    font-weight: 600;
+}
+td {
+    font-size: 0.9em;
+    color: var(--text-dark);
+}
+tr:hover {
+    background-color: rgba(7, 214, 160, 0.1);
+}
+
+/* Mobile Card Layout */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+    thead {
+        display: none;
+    }
+    tr {
+        background-color: #fff;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        overflow: hidden;
+    }
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+        border-bottom: 1px solid var(--border-color);
+        font-size: 0.85em;
+    }
+    td:last-child {
+        border-bottom: none;
+    }
+    td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--primary-dark);
+        flex-basis: 40%;
+        text-align: left;
+    }
+}
+</style>
+
+
 </head>
 <body>
     <!-- Navbar -->
@@ -72,61 +138,62 @@
             <p style="font-size: 1em; color: #333; margin-bottom: 30px;">
                 Each release brings a new piece of the Obserc experience to life. Below is our planned rollout — with live builds available to approved testers.
             </p>
-            <table style="width: 100%; border-collapse: collapse; background-color: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); font-size: 0.9em;">
-                <thead>
-                    <tr style="background-color: #0A3300; color: #F8F8F8;">
-                        <th style="padding: 15px; text-align: left; font-weight: 600;">Release Title</th>
-                        <th style="padding: 15px; text-align: left; font-weight: 600;">Release Code</th>
-                        <th style="padding: 15px; text-align: left; font-weight: 600;">Description</th>
-                        <th style="padding: 15px; text-align: left; font-weight: 600;">Status</th>
-                        <th style="padding: 15px; text-align: left; font-weight: 600;">Release Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="background-color: #F8FFE5;">
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Headless Build v0</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">OBSRC-HL-001</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Detection of emotional abuse and verbal violence via audio analysis.</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0; color: #07D6A0;">Live</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Aug 30, 2025</td>
-                    </tr>
-                    <tr style="background-color: #fff;">
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Headless Build v1</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">OBSRC-HL-002</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Advanced emotional analysis and enhanced violence detection logic.</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0; color: #666;"> Pending</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Sep 12, 2025</td>
-                    </tr>
-                    <tr style="background-color: #F8FFE5;">
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">UI Integration v0</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">OBSRC-UIIM-001</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">First visual interface with real-time feedback and cross-platform support.</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0; color: #666;"> Pending</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Sep 26, 2025</td>
-                    </tr>
-                    <tr style="background-color: #fff;">
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Device Camera v0</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">OBSRC-DVC-CAM-001</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Hardware integration tests for ObsercCam standalone device.</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0; color: #666;"> Pending</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Oct 10, 2025</td>
-                    </tr>
-                    <tr style="background-color: #F8FFE5;">
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Circle System v0</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">OBSRC-CIR-001</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Friend network system + escalation protocol testing.</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0; color: #666;"> Pending</td>
-                        <td style="padding: 15px; border-bottom: 1px solid #E0E0E0;">Oct 25, 2025</td>
-                    </tr>
-                    <tr style="background-color: #fff;">
-                        <td style="padding: 15px;">MVP Build</td>
-                        <td style="padding: 15px;">OBSRC-MVP-001</td>
-                        <td style="padding: 15px;">Full feature integration and stability testing.</td>
-                        <td style="padding: 15px; color: #666;"> Pending</td>
-                        <td style="padding: 15px;">Nov 15, 2025</td>
-                    </tr>
-                </tbody>
-            </table>
+            <table>
+    <thead>
+        <tr>
+            <th>Release Title</th>
+            <th>Release Code</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Release Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-label="Release Title">Headless Build v0</td>
+            <td data-label="Release Code">OBSRC-HL-001</td>
+            <td data-label="Description">Detection of emotional abuse and verbal violence via audio analysis.</td>
+            <td data-label="Status" style="color: #07D6A0;">Live</td>
+            <td data-label="Release Date">Aug 30, 2025</td>
+        </tr>
+        <tr>
+            <td data-label="Release Title">Headless Build v1</td>
+            <td data-label="Release Code">OBSRC-HL-002</td>
+            <td data-label="Description">Advanced emotional analysis and enhanced violence detection logic.</td>
+            <td data-label="Status" style="color: #666;">Pending</td>
+            <td data-label="Release Date">Sep 12, 2025</td>
+        </tr>
+        <tr>
+            <td data-label="Release Title">UI Integration v0</td>
+            <td data-label="Release Code">OBSRC-UIIM-001</td>
+            <td data-label="Description">First visual interface with real-time feedback and cross-platform support.</td>
+            <td data-label="Status" style="color: #666;">Pending</td>
+            <td data-label="Release Date">Sep 26, 2025</td>
+        </tr>
+        <tr>
+            <td data-label="Release Title">Device Camera v0</td>
+            <td data-label="Release Code">OBSRC-DVC-CAM-001</td>
+            <td data-label="Description">Hardware integration tests for ObsercCam standalone device.</td>
+            <td data-label="Status" style="color: #666;">Pending</td>
+            <td data-label="Release Date">Oct 10, 2025</td>
+        </tr>
+        <tr>
+            <td data-label="Release Title">Circle System v0</td>
+            <td data-label="Release Code">OBSRC-CIR-001</td>
+            <td data-label="Description">Friend network system + escalation protocol testing.</td>
+            <td data-label="Status" style="color: #666;">Pending</td>
+            <td data-label="Release Date">Oct 25, 2025</td>
+        </tr>
+        <tr>
+            <td data-label="Release Title">MVP Build</td>
+            <td data-label="Release Code">OBSRC-MVP-001</td>
+            <td data-label="Description">Full feature integration and stability testing.</td>
+            <td data-label="Status" style="color: #666;">Pending</td>
+            <td data-label="Release Date">Nov 15, 2025</td>
+        </tr>
+    </tbody>
+</table>
+
         </div>
     </section>
 
