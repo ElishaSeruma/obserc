@@ -7,42 +7,100 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        /* Additional styles for release notes sections */
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap');
+        
+
         .release-section {
-            margin: 40px 0;
-            padding: 30px;
-            background-color: var(--form-bg);
+        margin: 40px auto; 
+        padding: 40px;
+        background-color: var(--form-bg);
+        border-radius: 24px; 
+        border: 1px solid var(--border-color); 
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07); 
+        max-width: 900px; 
+    }
+    .release-section h2 {
+        font-size: 2.25em; 
+        color: var(--primary-dark);
+        margin-bottom: 15px;
+        border-bottom: 2px solid var(--primary-brand); 
+        padding-bottom: 10px;
+    }
+    .release-section h3 {
+        font-size: 1.75em;
+        color: var(--primary-dark);
+        margin: 30px 0 15px;
+    }
+     .release-section h4 {
+        font-size: 1.2em;
+        color: var(--text-dark);
+        font-weight: 700;
+        margin: 20px 0 5px;
+    }
+    .release-section ul, .release-section ol {
+        padding-left: 25px;
+        font-size: 1em;
+        color: var(--text-dark);
+    }
+    .release-section li {
+        margin-bottom: 10px; 
+    }
+    .release-section p {
+        font-size: 1em;
+        color: var(--text-dark);
+        margin-bottom: 15px;
+    }
+
+    
+    .btn-secondary-nav {
+        margin-top: 20px;
+        display: inline-block;
+        background-color: var(--primary-brand);
+        color: var(--primary-dark);
+        font-weight: 600;
+        padding: 12px 24px;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-secondary-nav:hover {
+        transform: translateY(-2px); 
+        box-shadow: 0 4px 15px rgba(7, 214, 160, 0.3);
+    }
+    
+    .load-more {
+        text-align: center;
+        margin: 40px 0;
+    }
+    .load-more .btn-primary-nav {
+         
+        background-color: var(--primary-dark);
+        color: var(--text-light);
+        padding: 14px 28px;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+    .load-more .btn-primary-nav:hover {
+        background-color: #1A5C00; 
+    }
+
+    
+    @media (max-width: 768px) {
+        .release-section {
+            padding: 25px;
             border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
         .release-section h2 {
-            font-size: 2em;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
+            font-size: 1.8em;
         }
         .release-section h3 {
             font-size: 1.5em;
-            color: var(--primary-dark);
-            margin: 20px 0 10px;
         }
-        .release-section ul {
-            margin-left: 20px;
+        .release-section ul, .release-section ol, .release-section p {
             font-size: 0.95em;
-            color: var(--text-dark);
         }
-        .release-section p {
-            font-size: 0.95em;
-            color: var(--text-dark);
-            margin-bottom: 10px;
-        }
-        .release-section .btn-secondary-nav {
-            margin-top: 15px;
-            display: inline-block;
-        }
-        .load-more {
-            text-align: center;
-            margin: 30px 0;
-        }
+    }
         @media (max-width: 768px) {
             .release-section {
                 padding: 20px;
@@ -103,57 +161,131 @@
             </div>
         </section>
 
-        <!-- v0.8.2 Beta Release Section -->
         <section class="release-section">
-            <div class="container">
-                <h2>v0.8.2 Beta (UI Preview)</h2>
-                <p><strong>Release Date:</strong> August 10, 2025</p>
-                <p><strong>Type:</strong> UI Build</p>
-                <h3>Highlights</h3>
-                <ul>
-                    <li>Circle management added directly to the dashboard for seamless access.</li>
-                    <li>Manual escalation button integrated into the chat interface.</li>
-                    <li>Detection engine now processes 12% faster under low signal conditions.</li>
-                    <li>Updated iconography and micro-animations for improved feedback loops.</li>
-                </ul>
-                <h3>Fixes</h3>
-                <ul>
-                    <li>Resolved duplicate emergency alerts in low-network mode.</li>
-                    <li>Fixed UI freeze when Circle exceeded 10 members.</li>
-                </ul>
-                <h3>Known Issues</h3>
-                <ul>
-                    <li>Dark mode resets after app restart.</li>
-                    <li>On some Android tablets, chat messages may display misaligned.</li>
-                </ul>
-                <a href="/beta-download" class="btn-secondary-nav">Download v0.8.2</a>
-            </div>
-        </section>
+    <div class="container">
+        <h2>Obserc Beta v0.01 Release Notes</h2>
+        <p><strong>Release Date:</strong> August 27, 2025</p>
 
-        <!-- v0.7.9 Beta Release Section -->
-        <section class="release-section">
-            <div class="container">
-                <h2>v0.7.9 Beta (Headless)</h2>
-                <p><strong>Release Date:</strong> August 02, 2025</p>
-                <p><strong>Type:</strong> Headless Build</p>
-                <h3>Highlights</h3>
-                <ul>
-                    <li>Expanded voice detection range for verbal distress signals.</li>
-                    <li>Tuned AI to reduce false positives in crowded environments.</li>
-                    <li>Added background performance logging for analytics.</li>
-                </ul>
-                <h3>Known Issues</h3>
-                <ul>
-                    <li>Occasional missed physical motion triggers on low-tier devices.</li>
-                    <li>Inconsistent feedback tones when escalation is triggered.</li>
-                </ul>
-                <a href="/beta-download" class="btn-secondary-nav">Download v0.7.9</a>
-            </div>
-        </section>
+        <p>Thank you for participating in the closed beta for Obserc! This initial version is focused on testing the core detection pipeline and local data logging. Your feedback on the stability and accuracy of these foundational features is crucial.</p>
 
+        <h3>Key Features & Beta Goals</h3>
+        <p>This release includes the essential framework for on-device analysis and data collection.</p>
+
+        <h4>Emotional & Verbal Abuse Detection</h4>
+        <p>The primary goal of this beta is to validate our manipulation models. The app actively listens for speech and classifies it as either "manipulative" or "non-manipulative."</p>
+
+        <h4>Listening Modes</h4>
+        <ul>
+            <li><strong>Triggered Sessions:</strong> Users can manually start and stop a listening session from the Home screen. This is the primary mode for controlled testing.</li>
+            <li><strong>Background Listening (Toggle):</strong> A toggle is available in Settings to enable a persistent background listening service.</li>
+        </ul>
+
+        <h4>Local Data Logging</h4>
+        <p>All session data and detected events are stored exclusively on your device in a local database (Room DB). No audio or personal data is sent to the cloud in this version.</p>
+
+        <h4>Session History</h4>
+        <p>A functional History screen displays a list of all completed sessions. Tapping a session reveals a detailed view with timestamps and detected phrases.</p>
+
+        <h4>Predefined Test Circle</h4>
+        <p>The Circle screen displays a static, read-only list of internal test members. The "Send Test Alert" button confirms backend connectivity by writing a timestamped event to our database.</p>
+
+        <h4>Daily Check-in (Placeholder)</h4>
+        <p>The UI for the daily check-in feature is included to gather feedback on the concept. The feature itself is planned for v0.02.</p>
+
+        <h4>Settings Control</h4>
+        <p>The Settings screen allows you to toggle background listening and other data collection preferences. These settings are saved locally on your device.</p>
+
+        <h3>How to Test</h3>
+        <ol>
+            <li><strong>Run Triggered Sessions:</strong> Use the "Start Triggered Listening Session" button on the Home screen. Speak scripted or ad-libbed phrases to test detection accuracy.</li>
+            <li><strong>Review Session History:</strong> After stopping a session, navigate to the History tab to see if the session was logged correctly. Tap on it to view the details.</li>
+            <li><strong>Test the Database Connection:</strong> Go to the Circle tab and press the "Send Test Alert" button. Please let the development team know if you encounter any errors.</li>
+            <li><strong>Explore the UI:</strong> Please navigate through all screens (Home, History, Circle, Settings) and report any crashes, layout issues, or unexpected behavior.</li>
+        </ol>
+
+        <h3>Known Issues</h3>
+        <ul>
+            <li><strong>Speech Recognition:</strong> The built-in Android Speech Recognition requires a stable internet connection and may not be available on all emulator configurations. A device with Google Play Services is required.</li>
+            <li><strong>Performance:</strong> You may notice a slight delay or UI stutter when stopping a session or submitting a check-in as data is written to the local database.</li>
+        </ul>
+
+        <h3>What's Next in v0.02 (Planned for September 30th)</h3>
+        <p>The next major beta version will build upon this foundation to create a fully integrated and dynamic user experience. We are excited about the significant advancements planned, which will dramatically expand the app's capabilities.</p>
+        
+        <h4>Full User Interface & Dynamic Login</h4>
+        <p>We will move beyond the single-tester model to a complete UI with a dynamic, multi-faceted authentication system. This will allow for secure, individual user accounts, personalized profiles, and a tailored user experience.</p>
+        
+        <h4>Expanded Verbal Analysis</h4>
+        <p>While v0.01 focuses specifically on patterns of mental and emotional abuse, v0.02 will broaden the analytical scope. The underlying models will be enhanced to detect a wider range of harmful speech, including patterns of coercion, direct threats, and other verbal indicators of escalating aggression.</p>
+        
+        <h4>Video Analysis for Physical Abuse Detection</h4>
+        <p>A significant new feature will be the introduction of video analysis. With explicit user consent, the app will be able to process video streams to identify patterns of movement and interaction that may indicate physical abuse or escalating violence. This expands Obserc's focus from the purely verbal (v0.01) to include critical non-verbal cues, aiming to provide a more holistic safety net.</p>
+        
+        <h4>Full Circle Integration & Intelligent Escalation</h4>
+        <p>The Circle feature will become fully dynamic. Users will be able to securely invite and manage their own trusted contacts. The escalation logic will be implemented in full, moving beyond the simple test button. This system will be designed to intelligently assess the severity and frequency of detected events—both verbal and physical—to trigger a tiered alert system, ensuring that Circle members are notified appropriately when a situation appears to be escalating.</p>
+
+        <p>Thank you again for your time and effort in testing Obserc. Your contribution is invaluable.</p>
+
+        <a href="beta-download.html" class="btn-secondary-nav">Download v0.01</a>
+    </div>
+</section>
+
+<section class="release-section">
+    <div class="container">
+        <h2>Obserc Beta v0.02 Release Notes</h2>
+        <p><strong>Release Date:</strong> September 30, 2025</p>
+
+        <p>Thank you for your invaluable feedback on v0.01! Your testing of the core pipeline has allowed us to take a major leap forward. Beta v0.02 transitions Obserc from a foundational proof-of-concept into a fully integrated and dynamic user experience. This release introduces user accounts, significantly expanded detection capabilities, and the full implementation of the 'Circle' alert system.</p>
+
+        <h3>What's New in v0.02</h3>
+        <p>This version brings to life the core features of the Obserc vision, moving beyond basic logging to a multi-faceted safety and alert system.</p>
+
+        <h4>Full User Accounts & Dynamic Login</h4>
+        <p>The single-tester model is gone. You can now create a secure, individual user account . This enables personalized profiles and a tailored user experience, forming the foundation for all future features.</p>
+
+        <h4>Expanded Verbal Analysis: Beyond Manipulation</h4>
+        <p>The detection model has been significantly upgraded. In addition to manipulative language, the app can now identify a wider range of harmful speech patterns, including:</p>
+        <ul>
+            <li>Coercion</li>
+            <li>Direct Threats</li>
+            <li>Verbal indicators of escalating aggression</li>
+        </ul>
+
+        <h4>Introducing Video Analysis for Physical Abuse Detection</h4>
+        <p>This is a major new feature that expands Obserc's focus beyond verbal cues. With explicit user consent, you can now enable video analysis during a session. The app will process the video stream locally to identify patterns of movement and interaction that may indicate physical abuse or escalating violence, providing a more holistic safety net.</p>
+
+        <h4>Fully Dynamic 'Circle' & Intelligent Alert Escalation</h4>
+        <p>The 'Circle' is no longer a static list. You can now securely invite and manage your own list of trusted contacts. The "Send Test Alert" button has been replaced with a fully implemented intelligent escalation system. This system assesses the severity and frequency of detected events—both verbal and physical—to trigger a tiered alert to your Circle members when a situation appears to be escalating.</p>
+
+        <h3>How to Test</h3>
+        <p>Your primary goal is to test the integration and functionality of these new, dynamic systems.</p>
+        <ol>
+            <li><strong>Create Your Account:</strong> Log out of the test profile and go through the new user registration and login flow.</li>
+            <li><strong>Build Your Circle:</strong> Navigate to the Circle screen and try inviting a contact (you can use a secondary email address for testing). Confirm that you can add and remove members.</li>
+            <li><strong>Test Expanded Detection (Verbal & Video):</strong>
+                <ul>
+                    <li>Run triggered sessions to test the new verbal classifiers. Use phrases that imply coercion or threats.</li>
+                    <li>With your consent, start a session with video analysis enabled. Safely simulate scenarios with sudden movements or aggressive gestures to test the detection model's accuracy.</li>
+                </ul>
+            </li>
+            <li><strong>Trigger a Test Escalation:</strong> In a controlled session, try to generate multiple detected events (both verbal and non-verbal) to test if the intelligent escalation logic triggers a notification as expected.</li>
+        </ol>
+
+        <h3>Known Issues</h3>
+        <ul>
+            <li><strong>Performance & Battery:</strong> Enabling video analysis is processor-intensive and will have a noticeable impact on battery life and may cause the device to warm up during long sessions.</li>
+            <li><strong>Model Accuracy:</strong> The new verbal and video analysis models are in their early stages. Please report any false positives (incorrectly flagged events) or false negatives (missed events) with as much detail as possible. This feedback is critical for refinement.</li>
+            <li><strong>Network Dependency:</strong> Circle invitations and alert escalations require a stable internet connection to function correctly.</li>
+        </ul>
+
+        <p>Thank you for continuing this journey with us. Your feedback on these powerful new features is essential as we work to build a more comprehensive and responsive safety tool.</p>
+
+        <a href="404 beta.html" class="btn-secondary-nav">Download Beta(v0.02)</a>
+    </div>
+</section>
         <!-- Load More Button -->
         <div class="load-more">
-            <a href="404.html" class="btn-primary-nav">Load More Past Release Notes</a>
+            <a href="404.html" class="btn-primary-nav">Load Past Release Notes</a>
         </div>
     </main>
 
