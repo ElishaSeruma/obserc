@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Obserc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+<style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            background-color: #ffffff; 
+            flex-direction: column;
+            padding: 20px; 
+        }
+
+        .not-found-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .not-found-container h1 {
+            font-size: 2.5em;
+            color: #07D6A0; 
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .not-found-container img {
+            max-width: 200px; 
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .not-found-container .btn-primary {
+            text-decoration: none; 
+            display: inline-block; 
+        }
+
+        @media (max-width: 768px) {
+            .not-found-container h1 {
+                font-size: 1.8em;
+            }
+            .not-found-container img {
+                max-width: 150px; 
+            }
+        }
+    </style>
+</head>
+<nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="logo.png" loading="lazy" alt="Obserc Logo">
+                Obserc
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link ">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="beta.html" class="nav-link">Beta</a></li>
+                <!--<li class="nav-item"><a href="404.html" class="nav-link">Docs</a></li>-->
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button type="button" class="btn-primary-nav" onclick="location.href='#bottomBanner'">Get Early Access</button>
+
+        </div>
+    </nav>
+
+<body>
+    <div class="not-found-container">
+        <h1>Oops! Obserc is still working on that version. Feel free to try an older version.</h1>
+        <img src="construct.gif" alt="Under Construction GIF">
+        <a href="beta-download.html" class="btn-primary">Download other version</a>
+        <a href="index.html" class="btn-primary">Back Home</a>
+    </div>
+</body>
+
+
+</html>
