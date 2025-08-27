@@ -6,91 +6,143 @@
     <title>Download Obserc Beta Builds</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
-    <!-- Using Manrope font as defined in style.css -->
-    <style>
+
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap');
+        :root {
+            --primary-brand: #07D6A0; 
+            --primary-dark: #0A3300; 
+            --text-dark: #333333;     
+            --text-light: #F8F8F8;    
+            --background-light: #F9FAFB; 
+            --form-bg: #FFFFFF;     
+            --border-color: #E5E7EB;  
+        }
+
+       
+        body {
+            background-color: var(--background-light);
+            font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+        }
+
+        
+        .download-section {
+            margin: 40px auto;
+            padding: 40px;
+            background-color: var(--form-bg);
+            border-radius: 24px; 
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07); 
+            max-width: 900px; 
+        }
+        .download-section h2 {
+            font-size: 2.25em; 
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-brand); 
+            padding-bottom: 10px;
+        }
+        .download-section ul, .download-section ol {
+            padding-left: 25px; 
+            font-size: 1em;
+            color: var(--text-dark);
+        }
+        .download-section li {
+            margin-bottom: 10px; 
+        }
+        .download-section p {
+            font-size: 1em; 
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        .download-section a {
+             color: var(--primary-brand);
+             font-weight: 600;
+        }
+        .download-section a:hover {
+            text-decoration: underline;
+        }
+        
         
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin: 30px 0;
+            background-color: var(--form-bg);
+            border-radius: 16px; 
+            overflow: hidden; 
         }
         th, td {
-            padding: 15px;
+            padding: 16px 20px;
             text-align: left;
             border-bottom: 1px solid var(--border-color);
         }
         th {
-            background-color: var(--primary-green);
-            color: white;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            font-size: 1em;
             font-weight: 600;
         }
         td {
-            font-size: 0.9em;
-            color: var(--text-dark);
-        }
-        tr:hover {
-            background-color: rgba(7, 214, 160, 0.1); /* Subtle hover effect */
-        }
-        .download-section {
-            margin: 40px 0;
-            padding: 30px;
-            background-color: var(--form-bg);
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-        .download-section h2 {
-            font-size: 2em;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-        }
-        .download-section ul, .download-section ol {
-            margin-left: 20px;
             font-size: 0.95em;
             color: var(--text-dark);
         }
-        .download-section .btn-primary-nav {
-            margin-top: 20px;
-            display: inline-block;
+        tbody tr:hover {
+            background-color: #F0FAF8; 
         }
-        /* Mobile Card Layout */
-@media (max-width: 768px) {
-    table, thead, tbody, th, td, tr {
-        display: block;
-        width: 100%;
-    }
-    thead {
-        display: none;
-    }
-    tr {
-        background-color: #fff;
-        margin-bottom: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        overflow: hidden;
-    }
-    td {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 15px;
-        border-bottom: 1px solid var(--border-color);
-        font-size: 0.85em;
-    }
-    td:last-child {
-        border-bottom: none;
-    }
-    td::before {
-        content: attr(data-label);
-        font-weight: 600;
-        color: var(--primary-dark);
-        flex-basis: 40%;
-        text-align: left;
-    }
-}
-</style>
+        tbody tr:last-child td {
+            border-bottom: none; 
+        }
+
+        
+        @media (max-width: 768px) {
+            .download-section {
+                padding: 25px;
+                border-radius: 16px;
+            }
+            .download-section h2 {
+                font-size: 1.8em;
+            }
+            .download-section ul, .download-section ol, .download-section p {
+                font-size: 0.95em;
+            }
+
+          
+            table, thead, tbody, th, td, tr {
+                display: block;
+                width: 100%;
+            }
+            thead {
+                display: none; 
+            }
+            tr {
+                margin-bottom: 20px;
+                border-radius: 16px;
+                border: 1px solid var(--border-color);
+                box-shadow: none;
+                overflow: hidden;
+            }
+            td {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 15px;
+                border-bottom: 1px solid var(--border-color);
+                font-size: 0.9em;
+            }
+            td:last-child {
+                border-bottom: none;
+            }
+            td::before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: var(--primary-dark);
+                flex-basis: 45%; 
+                text-align: left;
+            }
+        }
+    </style>
 
 </head>
 <body>
@@ -141,7 +193,7 @@
         <section class="download-section">
             <div class="container">
                 <h2>Tester Note</h2>
-                <p>Before downloading, ensure you are signed in with your beta tester account. Some builds require a device running Android 10 or higher and permissions for microphone, camera, and background processes. Check your device compatibility and review the <a href="404.html">system requirements</a>.</p>
+                <p>Before downloading, ensure you are signed in with your beta tester account. Some builds require a device running Android 10 or higher and permissions for microphone, camera, and background processes. Check your device compatibility and review the <a href="system-requirements.html">system requirements</a>.</p>
             </div>
         </section>
 
@@ -154,8 +206,8 @@
                 <p><strong>Size:</strong> 62 MB</p>
                 <p><strong>Type:</strong> UI Build</p>
                 <p><strong>MD5 Checksum:</strong> 47a8e92c10f4b87a2bcd9...</p>
-                <a href="/downloads/OBSRC-UI-0.8.2.apk" class="btn-primary-nav" download>Download Now</a>
-                <h3>Quick Notes:</h3>
+                <a href="/downloads/OBSRC-UI-0.8.2.apk" class="btn-secondary-nav" download>Download Now</a><br>
+                <br><h3>Quick Notes:</h3>
                 <ul>
                     <li>Includes Circle management from the main dashboard.</li>
                     <li>Adds manual escalation button for testers.</li>
@@ -181,9 +233,9 @@
     </thead>
     <tbody>
         <tr>
-            <td data-label="Version">v0.8.2</td>
-            <td data-label="Release Date">Aug 10, 2025</td>
-            <td data-label="Type">UI Build</td>
+            <td data-label="Version">v0.0.1</td>
+            <td data-label="Release Date">Aug 26, 2025</td>
+            <td data-label="Type">Headless Audio Classification</td>
             <td data-label="Size">62 MB</td>
             <td data-label="Status">Recommended</td>
             <td data-label="Download">
@@ -191,23 +243,23 @@
             </td>
         </tr>
         <tr>
-            <td data-label="Version">v0.7.9</td>
-            <td data-label="Release Date">Aug 02, 2025</td>
-            <td data-label="Type">Headless</td>
+            <td data-label="Version">v0.0.1e</td>
+            <td data-label="Release Date">Sept 15, 2025</td>
+            <td data-label="Type">Escalation Logic</td>
             <td data-label="Size">45 MB</td>
-            <td data-label="Status">Stable</td>
+            <td data-label="Status">Upcoming</td>
             <td data-label="Download">
-                <a href="/downloads/OBSRC-HL-0.7.9.apk" download class="btn-secondary-nav">Download</a>
+                <a href="/downloads/OBSRC-HL-0.0.1e.apk" download class="btn-secondary-nav">Download</a>
             </td>
         </tr>
         <tr>
-            <td data-label="Version">v0.7.3</td>
-            <td data-label="Release Date">Jul 15, 2025</td>
-            <td data-label="Type">Headless</td>
+            <td data-label="Version">v0.0.2</td>
+            <td data-label="Release Date">Sept 30, 2025</td>
+            <td data-label="Type">UI, Circle & Escalation intergration</td>
             <td data-label="Size">44 MB</td>
-            <td data-label="Status">Archived</td>
+            <td data-label="Status">Upcoming</td>
             <td data-label="Download">
-                <a href="/downloads/OBSRC-HL-0.7.3.apk" download class="btn-secondary-nav">Download</a>
+                <a href="/downloads/OBSRC-HL-0.0.2.apk" download class="btn-secondary-nav">Download</a>
             </td>
         </tr>
     </tbody>
@@ -227,7 +279,7 @@
                     <li>Log in with your beta tester credentials provided via email.</li>
                     <li>Start using Obserc in real-world scenarios and share feedback.</li>
                 </ol>
-                <p>For detailed setup guides, visit our <a href="/docs">Documentation</a>.</p>
+                <p>For detailed setup guides, visit our <a href="beta-release-notes.html">Documentation</a>.</p>
             </div>
         </section>
 
@@ -235,7 +287,7 @@
         <section class="download-section">
             <div class="container">
                 <h2>Disclaimer</h2>
-                <p>Beta builds are for testing purposes only and should not be relied upon in emergency situations. Always maintain an alternate safety plan. Review our <a href="/beta-privacy">Beta Privacy Policy</a> for data handling details.</p>
+                <p>Beta builds are for testing purposes only and should not be relied upon in emergency situations. Always maintain an alternate safety plan. Review our <a href="privacy.html">Beta Privacy Policy</a> for data handling details.</p>
             </div>
         </section>
     </main>
