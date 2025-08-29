@@ -163,7 +163,7 @@
 
         <section class="release-section">
     <div class="container">
-        <h2>Obserc Beta v0.01 Release Notes</h2>
+        <h2>Obserc Beta v1.0.0 Release Notes</h2>
         <p><strong>Release Date:</strong> August 27, 2025</p>
 
         <p>Thank you for participating in the closed beta for Obserc! This initial version is focused on testing the core detection pipeline and local data logging. Your feedback on the stability and accuracy of these foundational features is crucial.</p>
@@ -226,63 +226,105 @@
 
         <p>Thank you again for your time and effort in testing Obserc. Your contribution is invaluable.</p>
 
-        <a href="beta-download.html" class="btn-primary">Download Beta (v1.0.1)</a>
+        <a href="beta-download.html" class="btn-primary">Download Beta (v1.0.0)</a>
     </div>
 </section>
 
 <section class="release-section">
     <div class="container">
-        <h2>Obserc Beta v0.02 Release Notes</h2>
-        <p><strong>Release Date:</strong> September 30, 2025</p>
+        <h2>Obserc Beta v1.0.1e Release Notes</h2>
+        <p><strong>Release Date:</strong> August 28, 2025</p>
 
-        <p>Thank you for your invaluable feedback on v0.01! Your testing of the core pipeline has allowed us to take a major leap forward. Beta v0.02 transitions Obserc from a foundational proof-of-concept into a fully integrated and dynamic user experience. This release introduces user accounts, significantly expanded detection capabilities, and the full implementation of the 'Circle' alert system.</p>
+        <p>Thank you for participating in the closed beta for Obserc! This version marks a major milestone, moving from internal concepts to a fully interactive testing environment.</p>
 
-        <h3>What's New in v0.02</h3>
-        <p>This version brings to life the core features of the Obserc vision, moving beyond basic logging to a multi-faceted safety and alert system.</p>
-
-        <h4>Full User Accounts & Dynamic Login</h4>
-        <p>The single-tester model is gone. You can now create a secure, individual user account . This enables personalized profiles and a tailored user experience, forming the foundation for all future features.</p>
-
-        <h4>Expanded Verbal Analysis: Beyond Manipulation</h4>
-        <p>The detection model has been significantly upgraded. In addition to manipulative language, the app can now identify a wider range of harmful speech patterns, including:</p>
+        <h3>Focus of This Release</h3>
         <ul>
-            <li>Coercion</li>
-            <li>Direct Threats</li>
-            <li>Verbal indicators of escalating aggression</li>
+            <li>Simple user onboarding flow</li>
+            <li>Full end-to-end escalation logic</li>
+            <li>Your feedback on the reliability of sign-up, contact management, and scenario simulations</li>
         </ul>
 
-        <h4>Introducing Video Analysis for Physical Abuse Detection</h4>
-        <p>This is a major new feature that expands Obserc's focus beyond verbal cues. With explicit user consent, you can now enable video analysis during a session. The app will process the video stream locally to identify patterns of movement and interaction that may indicate physical abuse or escalating violence, providing a more holistic safety net.</p>
+        <h3>Key Features & Beta Goals</h3>
+        <p>This release includes the full architectural framework for user management and the core emergency alert system.</p>
 
-        <h4>Fully Dynamic 'Circle' & Intelligent Alert Escalation</h4>
-        <p>The 'Circle' is no longer a static list. You can now securely invite and manage your own list of trusted contacts. The "Send Test Alert" button has been replaced with a fully implemented intelligent escalation system. This system assesses the severity and frequency of detected events—both verbal and physical—to trigger a tiered alert to your Circle members when a situation appears to be escalating.</p>
+        <h4>Full User Onboarding & Management</h4>
+        <ul>
+            <li><strong>Authentication:</strong> Create an account using email + password. Login screen available for returning testers.</li>
+            <li><strong>Phone Number Validation:</strong> Ensures all numbers are in proper international format (e.g., +12223334444).</li>
+            <li><strong>Contact Entry:</strong> After sign-up, users must add five emergency contacts (Primary, Secondary, and three others).</li>
+        </ul>
 
-        <h3>How to Test</h3>
-        <p>Your primary goal is to test the integration and functionality of these new, dynamic systems.</p>
-        <ol>
-            <li><strong>Create Your Account:</strong> Log out of the test profile and go through the new user registration and login flow.</li>
-            <li><strong>Build Your Circle:</strong> Navigate to the Circle screen and try inviting a contact (you can use a secondary email address for testing). Confirm that you can add and remove members.</li>
-            <li><strong>Test Expanded Detection (Verbal & Video):</strong>
+        <h4>Dynamic Circle Management</h4>
+        <ul>
+            <li><strong>Contact Loading:</strong> Circle screen fetches & displays saved contacts.</li>
+            <li><strong>Add/Modify Contacts:</strong> Prompts new users to add contacts. Includes “Modify Contacts” option to update existing entries.</li>
+        </ul>
+
+        <h4>Complete Escalation Logic & Simulation</h4>
+        <ul>
+            <li><strong>Manual Triggers:</strong> 5 buttons to manually trigger escalation scenarios: WHITE, YELLOW, ORANGE, RED, BLACK.</li>
+            <li><strong>Full Simulation Mode:</strong> Runs a 20-minute escalation (WHITE → BLACK).</li>
+            <li><strong>Real-World Actions:</strong> Scenarios now execute planned actions:
                 <ul>
-                    <li>Run triggered sessions to test the new verbal classifiers. Use phrases that imply coercion or threats.</li>
-                    <li>With your consent, start a session with video analysis enabled. Safely simulate scenarios with sudden movements or aggressive gestures to test the detection model's accuracy.</li>
+                    <li>SMS alerts with tailored wording</li>
+                    <li>Real phone calls to saved contacts</li>
                 </ul>
             </li>
-            <li><strong>Trigger a Test Escalation:</strong> In a controlled session, try to generate multiple detected events (both verbal and non-verbal) to test if the intelligent escalation logic triggers a notification as expected.</li>
-        </ol>
-
-        <h3>Known Issues</h3>
-        <ul>
-            <li><strong>Performance & Battery:</strong> Enabling video analysis is processor-intensive and will have a noticeable impact on battery life and may cause the device to warm up during long sessions.</li>
-            <li><strong>Model Accuracy:</strong> The new verbal and video analysis models are in their early stages. Please report any false positives (incorrectly flagged events) or false negatives (missed events) with as much detail as possible. This feedback is critical for refinement.</li>
-            <li><strong>Network Dependency:</strong> Circle invitations and alert escalations require a stable internet connection to function correctly.</li>
         </ul>
 
-        <p>Thank you for continuing this journey with us. Your feedback on these powerful new features is essential as we work to build a more comprehensive and responsive safety tool.</p>
+        <h4>Dynamic Call Settings</h4>
+        <ul>
+            <li><strong>Play Call Audios (Default):</strong> Simulates calls with pre-recorded audio playback.</li>
+            <li><strong>Call Circle Directly:</strong> Initiates real phone calls (with disclaimer).</li>
+        </ul>
 
-        <a href="404 beta.html" class="btn-secondary-nav">Download Beta(v2.0.0)</a>
+        <h4>Functional Settings</h4>
+        <ul>
+            <li><strong>Logout & Delete Account:</strong> Secure account management, protected by confirmation dialogs.</li>
+        </ul>
+
+        <h3>How to Test</h3>
+        <ol>
+            <li><strong>Onboard a New User:</strong> Sign up, validate phone number, and add 5 contacts.</li>
+            <li><strong>Test the Circle Screen:</strong> Navigate to Circle tab and verify contacts load correctly. Use Modify Contacts to make changes.</li>
+            <li><strong>Test Call Settings:</strong> In Settings tab, toggle between Play Call Audios and Call Circle Directly. Ensure disclaimer appears for real calls.</li>
+            <li><strong>Run Manual Scenarios:</strong> In Test tab, trigger RED and BLACK with audio mode enabled. Switch to direct call mode and confirm actual calls are made.</li>
+            <li><strong>Verify SMS Messages:</strong> Use a second device to confirm correct SMS messages arrive in all relevant scenarios.</li>
+        </ol>
+
+        <h3>Known Limitations</h3>
+        <ul>
+            <li><strong>Emulator:</strong> Cannot fully test SMS/Calls — physical device required.</li>
+            <li><strong>Audio Focus on Physical Devices:</strong> Due to Android policies, the app cannot play audio during calls. The new dynamic call setting lets users choose between simulated audio or real calls.</li>
+        </ul>
+
+        <h3>What’s Next in v2.0.0 (Planned for September 30, 2025)</h3>
+        <p>The next beta will expand Obserc into a fully integrated and dynamic experience:</p>
+
+        <h4>Full User Interface & Dynamic Login</h4>
+        <ul>
+            <li>Multi-faceted authentication</li>
+            <li>Individual accounts with profiles & personalization</li>
+        </ul>
+
+        <h4>Expanded Verbal Analysis</h4>
+        <p>Beyond mental/emotional abuse patterns, the app will detect coercion, threats, and escalating aggression.</p>
+
+        <h4>Video Analysis for Physical Abuse Detection</h4>
+        <p>With explicit consent, video streams will be analyzed for non-verbal cues (movement & interaction), providing a broader focus on verbal + non-verbal abuse detection.</p>
+
+        <h4>Full Circle Integration & Intelligent Escalation</h4>
+        <ul>
+            <li>Secure Circle invitations & management</li>
+            <li>Intelligent, tiered escalation system based on severity & frequency of events</li>
+        </ul>
+
+        <p>Thank you again for your time and effort in testing Obserc. Your contribution is invaluable.</p>
+
+        <a href="https://github.com/ElishaSeruma/obserc/releases/download/v1.0.0e/app-debug.apk" class="btn-secondary-nav">Download Beta(v1.0.1e)</a>
     </div>
 </section>
+
         <!-- Load More Button -->
         <div class="load-more">
             <a href="404.html" class="btn-primary-nav">Load Past Release Notes</a>
@@ -372,4 +414,5 @@
 <script src="scripts.js"></script>
 
 </html>
+
 
