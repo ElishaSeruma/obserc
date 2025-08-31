@@ -160,6 +160,44 @@
                 <p class="sub-headline">Every update brings us closer to launch. Below is a detailed breakdown of changes, improvements, and known issues for each Obserc beta release.</p>
             </div>
         </section>
+<section class="release-section">
+    <div class="container">
+        <h2>Obserc Beta v1.1.0 Release Notes</h2>
+        <p><strong>Release Date:</strong> August 31, 2025</p>
+
+        <p>Thank you for your continued participation in the Obserc beta program. This update introduces a completely overhauled user experience, a brand new home mapping feature, and key stability improvements based on your feedback.</p>
+
+        <h3>What's New</h3>
+
+        <h4>New Login and Signup System</h4>
+        <p>We've built a full authentication system from the ground up. New users can now create an account directly within the app, and existing users have a streamlined login experience.</p>
+
+        <h4>Persistent Sessions</h4>
+        <p>You will now stay logged in to your account even after closing the app. No need to enter your password every time you launch Obserc.</p>
+
+        <h4>Home Mapping and CoreSpace Setup (Phase 1)</h4>
+        <ul>
+            <li><strong>Guided Room Walkthrough:</strong> Users first set their home location and specify the number of rooms. They then walk through each room in a guided "+" pattern. The app logs spatial coordinates to map the layout and individual zones.</li>
+            <li><strong>Simple Home Map:</strong> After the walkthrough, the app generates a simple visual map of your home, showing each mapped room as a section in a square layout.</li>
+            <li><strong>CoreSpace Determination:</strong> After mapping, the app enters a two-minute tracking period. By analyzing your movement, room size, and number of rooms, the app determines your "CoreSpace"—the critical zone in your home where you spend the most time and are most at risk. A pop-up notifies you when this process is complete.</li>
+        </ul>
+
+        <h3>Bug Fixes & Improvements</h3>
+        <ul>
+            <li><strong>Improved Continuous Listening:</strong> Fixed a major issue where the listening function was not truly continuous and could miss words or phrases. The listening engine is now a more stable on-device system, resolving "Client Error" and "No Match" issues.</li>
+            <li><strong>History for All Sessions:</strong> The History screen now logs an entry for every session attempt, including failed ones. Failed sessions are clearly marked, providing a complete activity record.</li>
+        </ul>
+
+        <h3>Known Issues</h3>
+        <ul>
+            <li><strong>Listening Service Reliability:</strong> The core listening service may occasionally fail to load when starting a session. This remains our highest priority, with a complete fix planned for a future update.</li>
+        </ul>
+
+        <p>Thank you again for testing Obserc. Your feedback continues to guide the development of safer and smarter features.</p>
+
+        <a href="https://github.com/ElishaSeruma/obserc/releases/download/v1.1.0/app-debug.apk" class="btn-primary">Download Beta (v1.1.0)</a>
+    </div>
+</section>
 
         <section class="release-section">
     <div class="container">
@@ -229,6 +267,8 @@
         <a href="beta-download.html" class="btn-primary">Download Beta (v1.0.0)</a>
     </div>
 </section>
+
+        
 
 <section class="release-section">
     <div class="container">
@@ -414,6 +454,7 @@
 <script src="scripts.js"></script>
 
 </html>
+
 
 
 
